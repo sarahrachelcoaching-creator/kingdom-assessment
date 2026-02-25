@@ -3,59 +3,57 @@ import { useState, useEffect, useRef } from "react";
 const P = "#006400";
 const GOLD = "#E88504";
 const CREAM = "#FAF6F0";
-const LIGHT = "#FEF3E2";
 const ESPRESSO = "#4E342E";
 
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Jost',sans-serif;background:${CREAM};}
+body{font-family:'Jost',sans-serif;background:#FAF6F0;}
 .app{min-height:100vh;background:linear-gradient(160deg,#FAF6F0 0%,#FEF3E2 50%,#FAF6F0 100%);display:flex;flex-direction:column;align-items:center;padding:0 16px 60px;}
 .hdr{width:100%;max-width:640px;text-align:center;padding:36px 0 20px;border-bottom:1px solid rgba(0,100,0,.15);margin-bottom:28px;}
-.hdr-eye{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:${GOLD};margin-bottom:10px;}
+.hdr-eye{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#E88504;margin-bottom:10px;}
 .hdr-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#006400;line-height:1.2;margin-bottom:6px;}
 .hdr-sub{font-size:12px;color:#4E342E;font-weight:300;opacity:.7;}
 .chat{width:100%;max-width:640px;display:flex;flex-direction:column;gap:16px;}
 .msg{display:flex;gap:10px;animation:fu .35s ease forwards;opacity:0;}
 .msg.user{flex-direction:row-reverse;}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;}
-.av.s{background:#006400;color:#E88504;font-family:'Cormorant Garamond',serif;font-size:15px;}
+.av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.av.s{background:#006400;color:#E88504;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;}
 .av.u{background:#006400;color:white;font-size:11px;font-weight:500;}
 .bub{max-width:84%;padding:12px 16px;border-radius:4px;font-size:13.5px;line-height:1.75;font-weight:300;}
-.bub.s{background:#FDF6EE;color:#2C1510;border:1px solid rgba(78,52,46,.2);border-top-left-radius:0;box-shadow:0 2px 16px rgba(0,0,0,.2);}
+.bub.s{background:#FDF6EE;color:#2C1510;border:1px solid rgba(78,52,46,.2);border-top-left-radius:0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .bub.u{background:#4E342E;color:#FDF6EE;border-top-right-radius:0;}
 .opts{width:100%;max-width:640px;display:flex;flex-direction:column;gap:7px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
 .opt{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 16px;text-align:left;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#4E342E;transition:all .2s;line-height:1.5;}
-.opt:hover{border-color:#E88504;background:rgba(232,133,4,.15);color:#E88504;}
-.qlabel{font-family:'Cormorant Garamond',serif;font-size:15px;font-style:italic;color:#4E342E;margin-bottom:10px;}
-.qnum{font-size:11px;color:#4E342E;opacity:.6;margin-bottom:6px;}
+.opt:hover{border-color:#E88504;background:#FEF3E2;}
+.qlabel{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#4E342E;margin-bottom:10px;line-height:1.5;}
+.qnum{font-size:11px;color:#4E342E;opacity:.5;margin-bottom:6px;}
 .multi{width:100%;max-width:640px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
 .mcat{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin:14px 0 7px;}
 .mgrid{display:flex;flex-direction:column;gap:6px;}
-.mgrid2{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .chk{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:9px 13px;text-align:left;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;font-weight:300;color:#4E342E;transition:all .2s;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
-.chk:hover{border-color:#E88504;background:rgba(232,133,4,.12);}
-.chk.on{border-color:#E88504;background:rgba(232,133,4,.18);color:#E88504;}
+.chk:hover{border-color:#E88504;background:#FEF3E2;}
+.chk.on{border-color:#E88504;background:#FEF3E2;color:#4E342E;}
 .chkbox{width:13px;height:13px;border:1px solid rgba(78,52,46,.3);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:9px;}
 .chk.on .chkbox{background:#E88504;border-color:#E88504;color:white;}
 .cont{background:#006400;color:white;border:none;border-radius:4px;padding:12px 26px;font-family:'Jost',sans-serif;font-size:12px;font-weight:400;letter-spacing:1px;cursor:pointer;transition:background .2s;margin-top:10px;}
 .cont:hover{background:#004d00;}
-.pbar{width:100%;max-width:640px;height:2px;background:rgba(255,255,255,.15);border-radius:2px;margin-bottom:6px;}
+.pbar{width:100%;max-width:640px;height:2px;background:rgba(0,100,0,.1);border-radius:2px;margin-bottom:6px;}
 .pfill{height:100%;background:linear-gradient(90deg,#E88504,#006400);border-radius:2px;transition:width .5s ease;}
-.plabel{width:100%;max-width:640px;font-size:10px;color:rgba(255,255,255,.4);font-weight:300;letter-spacing:1px;margin-bottom:20px;text-align:right;}
-.typing{display:flex;gap:4px;padding:12px 16px;background:#FDF6EE;border:1px solid rgba(78,52,46,.2);border-radius:4px;border-top-left-radius:0;width:fit-content;box-shadow:0 2px 16px rgba(0,0,0,.2);}
-.typing span{width:5px;height:5px;border-radius:50%;background:#4E342E;animation:bl 1.2s infinite;}
+.plabel{width:100%;max-width:640px;font-size:10px;color:#999;font-weight:300;letter-spacing:1px;margin-bottom:20px;text-align:right;}
+.typing{display:flex;gap:4px;padding:12px 16px;background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;border-top-left-radius:0;width:fit-content;}
+.typing span{width:5px;height:5px;border-radius:50%;background:#4E342E;opacity:.4;animation:bl 1.2s infinite;}
 .typing span:nth-child(2){animation-delay:.2s;}
 .typing span:nth-child(3){animation-delay:.4s;}
-@keyframes bl{0%,80%,100%{opacity:.3;transform:scale(1)}40%{opacity:1;transform:scale(1.2)}}
+@keyframes bl{0%,80%,100%{opacity:.2;transform:scale(1)}40%{opacity:.8;transform:scale(1.2)}}
 .inrow{display:flex;gap:7px;width:100%;max-width:640px;margin-top:6px;animation:fu .35s ease .15s forwards;opacity:0;}
-.txtin{flex:1;border:1px solid rgba(255,255,255,.2);border-radius:4px;padding:11px 15px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#2C1510;background:#FDF6EE;outline:none;transition:border-color .2s;}
+.txtin{flex:1;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 15px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#2C1510;background:white;outline:none;transition:border-color .2s;}
 .txtin:focus{border-color:#E88504;}
 .sndbtn{background:#E88504;color:white;border:none;border-radius:4px;padding:11px 18px;cursor:pointer;font-size:13px;transition:background .2s;}
 .sndbtn:hover{background:#c97000;}
-.rcard{background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;padding:28px;width:100%;max-width:640px;animation:fu .5s ease forwards;opacity:0;box-shadow:0 8px 32px rgba(0,0,0,.3);margin-top:24px;}
-.rsec{margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid rgba(78,52,46,.12);}
+.rcard{background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;padding:28px;width:100%;max-width:640px;animation:fu .5s ease forwards;opacity:0;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-top:24px;}
+.rsec{margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid rgba(78,52,46,.1);}
 .rsec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
 .reye{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#E88504;margin-bottom:7px;}
 .rhead{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:#006400;margin-bottom:9px;}
@@ -73,11 +71,9 @@ body{font-family:'Jost',sans-serif;background:${CREAM};}
 .sitem{background:#FAF6F0;border:1px solid rgba(78,52,46,.1);border-radius:4px;padding:11px 13px;}
 .sitem-l{font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin-bottom:3px;}
 .sitem-v{font-size:12px;color:#4E342E;font-weight:300;line-height:1.5;}
-.score-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(78,52,46,.08);}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(78,52,46,.06);}
 .score-row:last-child{border-bottom:none;}
 `;
-
-// ── DATA ─────────────────────────────────────────────────────────────────────
 
 const STATEMENTS = [
   "I always have extra money",
@@ -143,7 +139,6 @@ const HB_DESC = {
 };
 
 const HB_NAME = { overworking: "Overworking", avoiding_judgment: "Avoiding Judgment", seeking_validation: "Seeking Validation", avoiding_responsibility: "Avoiding Responsibility" };
-
 const NM_LABELS = { ease: "Ease vs. Striving", rest: "Rest & Margin", fulfillment: "Fulfillment", relational: "Relational Richness" };
 
 const INCOME_VAL = {
@@ -163,7 +158,6 @@ function getSetPoint(t) {
   const order = ["Ordinary","Familiar","Borderland","Promised Land"];
   let best = "Ordinary", bestVal = -1;
   for (const l of order) { if ((t[l]||0) >= bestVal) { bestVal = t[l]||0; best = l; } }
-  // tie goes lower — already handled by iterating ascending
   return best;
 }
 
@@ -172,8 +166,6 @@ function getHB(scores) {
   for (const [k,v] of Object.entries(scores)) { if (v > bestVal) { bestVal = v; best = k; } }
   return best;
 }
-
-// ── MULTI-SELECT COMPONENT ────────────────────────────────────────────────────
 
 function MultiCat({ cats, onContinue }) {
   const [sel, setSel] = useState([]);
@@ -222,7 +214,7 @@ function HBSelect({ cat, onContinue }) {
   const score = Object.values(checked).filter(Boolean).length;
   return (
     <div className="multi">
-      <div style={{fontSize:12,fontWeight:400,color:"#4E342E",marginBottom:12,letterSpacing:.3}}>Does this feel familiar currently or in the past?</div>
+      <div style={{fontSize:12,fontWeight:400,color:"#4E342E",marginBottom:12}}>Does this feel familiar currently or in the past?</div>
       <div className="mgrid">
         {cat.qs.map(q => (
           <button key={q} className={`chk ${checked[q]?"on":""}`} onClick={()=>toggle(q)}>
@@ -236,8 +228,6 @@ function HBSelect({ cat, onContinue }) {
   );
 }
 
-// ── RESULTS ───────────────────────────────────────────────────────────────────
-
 function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns, moneyOnHand, northStar, nonMoney, costItems }) {
   const sp = getSetPoint(tallies);
   const hb = getHB(hbScores);
@@ -248,10 +238,10 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
 
   return (
     <div className="rcard">
-      <div style={{textAlign:"center",marginBottom:24,paddingBottom:24,borderBottom:"1px solid rgba(0,100,0,.07)"}}>
+      <div style={{textAlign:"center",marginBottom:24,paddingBottom:24,borderBottom:"1px solid rgba(0,100,0,.1)"}}>
         <div className="reye">Your Assessment Results</div>
-        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:24,fontWeight:300,color:P,marginBottom:4}}>{name}</div>
-        <div style={{fontSize:11,color:"#bbb"}}>{new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</div>
+        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:24,fontWeight:300,color:"#006400",marginBottom:4}}>{name}</div>
+        <div style={{fontSize:11,color:"#aaa"}}>{new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})}</div>
       </div>
 
       <div className="rsec">
@@ -270,13 +260,13 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
             const isPrim = cat.key===hb;
             return (
               <div key={cat.key} className="score-row">
-                <span style={{fontSize:12,color:isPrim?P:"#4E342E",fontWeight:isPrim?500:300}}>{cat.name}</span>
-                <span style={{fontSize:11,color:isPrim?GOLD:"#aaa",fontWeight:isPrim?500:300}}>{s}/15</span>
+                <span style={{fontSize:12,color:isPrim?"#006400":"#4E342E",fontWeight:isPrim?500:300}}>{cat.name}</span>
+                <span style={{fontSize:11,color:isPrim?"#E88504":"#aaa",fontWeight:isPrim?500:300}}>{s}/15</span>
               </div>
             );
           })}
         </div>
-        <div style={{fontSize:13,fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"#4E342E",marginTop:12,lineHeight:1.7}}>
+        <div style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"#4E342E",marginTop:12,lineHeight:1.7,fontSize:14}}>
           This isn't a character flaw. This is your nervous system doing exactly what it was designed to do — protecting you based on old data. The data just needs to be renewed.
         </div>
       </div>
@@ -343,7 +333,7 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
         </div>
       </div>
 
-      <div className="rsec" style={{background:"linear-gradient(135deg,#006400 0%,#004d00 100%)",borderRadius:6,padding:"28px 24px",margin:"0 -4px"}}>
+      <div style={{background:"linear-gradient(135deg,#006400 0%,#004d00 100%)",borderRadius:6,padding:"28px 24px"}}>
         <div style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:"uppercase",color:"#E88504",marginBottom:10}}>Your Next Step</div>
         <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:300,color:"white",marginBottom:14,lineHeight:1.4}}>
           What we just did — that's the map.
@@ -353,23 +343,19 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
           <br/><br/>
           It's 90 days. We do the deep work together. And on the other side, the ceiling lifts — not because you pushed harder, but because your nervous system finally learned it's safe to receive.
         </div>
-        <div style={{fontSize:12,color:"rgba(255,255,255,0.6)",fontStyle:"italic",fontFamily:"'Cormorant Garamond',serif",fontSize:14,borderTop:"1px solid rgba(255,255,255,0.15)",paddingTop:16,marginTop:4}}>
+        <div style={{fontSize:14,fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"rgba(255,255,255,0.65)",borderTop:"1px solid rgba(255,255,255,0.15)",paddingTop:16,marginBottom:20}}>
           The question isn't whether this is real. You just saw it in your own answers. The question is whether you're ready to stop bumping that ceiling.
         </div>
-        <div style={{marginTop:20}}>
-          <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:12,fontWeight:300}}>This is an application process — not everyone is accepted. If you feel ready, apply below.</div>
-          <a href="https://www.kingdomalignment.academy/renew-receive" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#E88504",color:"white",padding:"13px 28px",borderRadius:4,fontFamily:"'Jost',sans-serif",fontSize:12,fontWeight:500,letterSpacing:"1.5px",textTransform:"uppercase",textDecoration:"none",transition:"background .2s"}}>Apply for Renew & Receive™</a>
-        </div>
+        <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:14,fontWeight:300}}>This is an application process — not everyone is accepted. If you feel ready, apply below.</div>
+        <a href="https://www.kingdomalignment.academy/renew-receive" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#E88504",color:"white",padding:"13px 28px",borderRadius:4,fontFamily:"'Jost',sans-serif",fontSize:12,fontWeight:500,letterSpacing:"1.5px",textTransform:"uppercase",textDecoration:"none"}}>Apply for Renew & Receive™</a>
       </div>
 
-      <div style={{textAlign:"center",paddingTop:16}}>
-        <div style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:"uppercase",color:"#E88504",marginBottom:6}}>Kingdom Alignment Academy</div>
+      <div style={{textAlign:"center",paddingTop:20}}>
+        <div style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:"uppercase",color:"#E88504"}}>Kingdom Alignment Academy</div>
       </div>
     </div>
   );
 }
-
-// ── MAIN ──────────────────────────────────────────────────────────────────────
 
 export default function App() {
   const [msgs, setMsgs] = useState([]);
@@ -377,8 +363,6 @@ export default function App() {
   const [phase, setPhase] = useState("init");
   const [ui, setUi] = useState(null);
   const [nameInput, setNameInput] = useState("");
-
-  // answers
   const [name, setName] = useState("");
   const [tallies, setTallies] = useState({"Ordinary":0,"Familiar":0,"Borderland":0,"Promised Land":0});
   const [aIdx, setAIdx] = useState(0);
@@ -393,7 +377,6 @@ export default function App() {
   const [hbScores, setHbScores] = useState({overworking:0,avoiding_judgment:0,seeking_validation:0,avoiding_responsibility:0});
   const [hbIdx, setHbIdx] = useState(0);
   const [showResults, setShowResults] = useState(false);
-
   const bottom = useRef(null);
 
   useEffect(() => { bottom.current?.scrollIntoView({behavior:"smooth"}); }, [msgs, ui, typing, showResults]);
@@ -402,7 +385,6 @@ export default function App() {
   const wait = (ms=1100) => new Promise(res=>{ setTyping(true); setTimeout(()=>{setTyping(false);res();},ms); });
   const userSay = (text) => setMsgs(p=>[...p,{text,from:"u",id:Date.now()+Math.random()}]);
 
-  // boot
   useEffect(()=>{
     (async()=>{
       await say("I'm so glad you're here. This is part conversation, part experience. Just answer honestly — first instinct is always the truest data.", 400);
@@ -422,7 +404,7 @@ export default function App() {
     await wait(1000);
     await say("Here's a suggested prayer — feel free to use your own words:");
     await wait(1200);
-    await say("\"God, I invite You into this conversation right now. I ask that You would be present in everything that surfaces today — every answer, every pattern, every number. Give me eyes to see clearly what You already see. And where there has been a ceiling that was never Your limit for me, begin to move. I submit this time to You. In Jesus' name, amen.\"");
+    await say(`"God, I invite You into this conversation right now. I ask that You would be present in everything that surfaces today — every answer, every pattern, every number. Give me eyes to see clearly what You already see. And where there has been a ceiling that was never Your limit for me, begin to move. I submit this time to You. In Jesus' name, amen."`);
     await wait(1000);
     await say("When you're done praying, type Next to continue.");
     setPhase("prayer");
@@ -518,23 +500,24 @@ export default function App() {
     }
   };
 
-  // progress
   const prog = ()=>{
     if (phase==="init"||phase==="name") return 2;
-    if (phase==="abundance") return 5 + (aIdx/9)*20;
-    if (ui?.type==="northstar") return 27;
-    if (ui?.next==="incomeceiling") return 32;
-    if (ui?.type==="multicat") return 40;
-    if (ui?.next==="moneyhand") return 46;
-    if (ui?.type==="nonmoney") return 50+(nmIdx/4)*10;
-    if (ui?.next==="incnext") return 63;
-    if (ui?.type==="costflat") return 70;
-    if (ui?.type==="hb") return 74+(hbIdx/4)*20;
+    if (phase==="prayer") return 8;
+    if (phase==="abundance") return 10 + (aIdx/9)*20;
+    if (ui?.type==="northstar") return 32;
+    if (ui?.next==="incomeceiling") return 36;
+    if (ui?.type==="multicat") return 44;
+    if (ui?.next==="moneyhand") return 50;
+    if (ui?.type==="nonmoney") return 54+(nmIdx/4)*10;
+    if (ui?.next==="incnext") return 66;
+    if (ui?.type==="costflat") return 72;
+    if (ui?.type==="hb") return 76+(hbIdx/4)*20;
     if (phase==="done") return 100;
     return 0;
   };
+
   const progLabel = ()=>{
-    if (phase==="name") return "Getting started";
+    if (phase==="name"||phase==="prayer") return "Getting started";
     if (phase==="abundance"||ui?.type==="northstar") return "Abundance Inventory";
     if (ui?.next==="incomeceiling"||ui?.type==="multicat"||ui?.next==="moneyhand") return "Financial Set Point";
     if (ui?.type==="nonmoney") return "Non-Money Set Points";
@@ -573,7 +556,7 @@ export default function App() {
       const nm = NON_MONEY[ui.idx];
       return (
         <div className="opts">
-          <div style={{fontSize:10,fontWeight:500,letterSpacing:2,textTransform:"uppercase",color:GOLD,marginBottom:8}}>{nm.label}</div>
+          <div style={{fontSize:10,fontWeight:500,letterSpacing:2,textTransform:"uppercase",color:"#E88504",marginBottom:8}}>{nm.label}</div>
           {nm.opts.map(o=><button key={o} className="opt" onClick={()=>handleNonMoney(o)}>{o}</button>)}
         </div>
       );
