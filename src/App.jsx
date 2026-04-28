@@ -6,9 +6,9 @@ const CREAM = "#FAF6F0";
 const ESPRESSO = "#4E342E";
 
 const css = `
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Jost',sans-serif;background:#FAF6F0;}
+body{font-family:'Montserrat',sans-serif;background:#FAF6F0;}
 .app{min-height:100vh;background:linear-gradient(160deg,#FAF6F0 0%,#FEF3E2 50%,#FAF6F0 100%);display:flex;flex-direction:column;align-items:center;padding:0 16px 60px;}
 .hdr{width:100%;max-width:640px;text-align:center;padding:36px 0 20px;border-bottom:1px solid rgba(0,100,0,.15);margin-bottom:28px;}
 .hdr-eye{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#E88504;margin-bottom:10px;}
@@ -20,24 +20,24 @@ body{font-family:'Jost',sans-serif;background:#FAF6F0;}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .av{width:34px;height:34px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
 .av.s{background:#006400;color:#E88504;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;}
-.av.u{background:#006400;color:white;font-size:11px;font-weight:500;}
+.av.u{background:#4E342E;color:white;font-size:11px;font-weight:500;}
 .bub{max-width:84%;padding:12px 16px;border-radius:4px;font-size:13.5px;line-height:1.75;font-weight:300;}
 .bub.s{background:#FDF6EE;color:#2C1510;border:1px solid rgba(78,52,46,.2);border-top-left-radius:0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .bub.u{background:#4E342E;color:#FDF6EE;border-top-right-radius:0;}
 .opts{width:100%;max-width:640px;display:flex;flex-direction:column;gap:7px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
-.opt{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 16px;text-align:left;cursor:pointer;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#4E342E;transition:all .2s;line-height:1.5;}
+.opt{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 16px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;color:#4E342E;transition:all .2s;line-height:1.5;}
 .opt:hover{border-color:#E88504;background:#FEF3E2;}
 .qlabel{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#4E342E;margin-bottom:10px;line-height:1.5;}
 .qnum{font-size:11px;color:#4E342E;opacity:.5;margin-bottom:6px;}
 .multi{width:100%;max-width:640px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
 .mcat{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin:14px 0 7px;}
 .mgrid{display:flex;flex-direction:column;gap:6px;}
-.chk{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:9px 13px;text-align:left;cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;font-weight:300;color:#4E342E;transition:all .2s;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
+.chk{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:9px 13px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:300;color:#4E342E;transition:all .2s;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
 .chk:hover{border-color:#E88504;background:#FEF3E2;}
 .chk.on{border-color:#E88504;background:#FEF3E2;color:#4E342E;}
 .chkbox{width:13px;height:13px;border:1px solid rgba(78,52,46,.3);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:9px;}
 .chk.on .chkbox{background:#E88504;border-color:#E88504;color:white;}
-.cont{background:#006400;color:white;border:none;border-radius:4px;padding:12px 26px;font-family:'Jost',sans-serif;font-size:12px;font-weight:400;letter-spacing:1px;cursor:pointer;transition:background .2s;margin-top:10px;}
+.cont{background:#006400;color:white;border:none;border-radius:4px;padding:12px 26px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;letter-spacing:1px;cursor:pointer;transition:background .2s;margin-top:10px;}
 .cont:hover{background:#004d00;}
 .pbar{width:100%;max-width:640px;height:2px;background:rgba(0,100,0,.1);border-radius:2px;margin-bottom:6px;}
 .pfill{height:100%;background:linear-gradient(90deg,#E88504,#006400);border-radius:2px;transition:width .5s ease;}
@@ -48,7 +48,7 @@ body{font-family:'Jost',sans-serif;background:#FAF6F0;}
 .typing span:nth-child(3){animation-delay:.4s;}
 @keyframes bl{0%,80%,100%{opacity:.2;transform:scale(1)}40%{opacity:.8;transform:scale(1.2)}}
 .inrow{display:flex;gap:7px;width:100%;max-width:640px;margin-top:6px;animation:fu .35s ease .15s forwards;opacity:0;}
-.txtin{flex:1;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 15px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:#2C1510;background:white;outline:none;transition:border-color .2s;}
+.txtin{flex:1;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 15px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;color:#2C1510;background:white;outline:none;transition:border-color .2s;}
 .txtin:focus{border-color:#E88504;}
 .sndbtn{background:#E88504;color:white;border:none;border-radius:4px;padding:11px 18px;cursor:pointer;font-size:13px;transition:background .2s;}
 .sndbtn:hover{background:#c97000;}
@@ -73,6 +73,16 @@ body{font-family:'Jost',sans-serif;background:#FAF6F0;}
 .sitem-v{font-size:12px;color:#4E342E;font-weight:300;line-height:1.5;}
 .score-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(78,52,46,.06);}
 .score-row:last-child{border-bottom:none;}
+.contact-form{width:100%;max-width:640px;background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;padding:24px;margin-top:16px;animation:fu .35s ease forwards;opacity:0;}
+.contact-field{margin-bottom:14px;}
+.contact-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin-bottom:6px;display:block;}
+.contact-input{width:100%;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 15px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;color:#2C1510;background:white;outline:none;transition:border-color .2s;}
+.contact-input:focus{border-color:#E88504;}
+.contact-submit{background:#006400;color:white;border:none;border-radius:4px;padding:13px 28px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;letter-spacing:1px;cursor:pointer;transition:background .2s;width:100%;margin-top:6px;}
+.contact-submit:hover{background:#004d00;}
+.contact-submit:disabled{background:#aaa;cursor:not-allowed;}
+.contact-note{font-size:11px;color:#999;margin-top:10px;text-align:center;font-weight:300;}
+
 `;
 
 const STATEMENTS = [
@@ -99,13 +109,13 @@ const INCOME_NEXT_OPTS = ["$5,000–$8,000/month","$8,000–$12,000/month","$12,
 const MONEY_OPTS = ["At zero or in the negative","Less than one month of expenses","1–3 months of expenses","3–6 months of expenses","6+ months — genuinely secure"];
 
 const PATTERN_CATS = {
-  Financial: ["An unexpected expense wipes it out","A tax bill or unexpected debt shows up","I undercharge or discount at the last minute","I give money away impulsively","I impulse spend or over-invest"],
-  Family: ["Family conflict arises — spouse/partner","Family conflict arises — kids","Family conflict arises — extended family"],
-  "Relationships/Social": ["A friendship suddenly becomes draining or falls apart","I start comparing myself to others and spiral","I withdraw or isolate"],
-  "Physical/Health": ["A health issue shows up","I get injured","Sleep problems or exhaustion hit suddenly","Anxiety or panic shows up","I get sick or run down"],
-  Spiritual: ["I start questioning if this is really God's will","I feel distant from God suddenly","Spiritual warfare feels heightened"],
-  "Business/Work": ["A client suddenly becomes a problem","I lose a key team member or contractor","Tech breaks down or systems fail","A launch flops right after a win","I get overwhelmed with admin and busy work","I start chasing shiny objects or pivoting","I start overgiving or undercharging"],
-  "Mental/Emotional": ["Imposter syndrome floods in","I freeze and stop taking action","I get hit with shame or old memories","I start numbing out — scrolling, Netflix, food, etc.","I get overwhelmed and slow down","I self-sabotage in some other way","I'm not sure — it just doesn't stick"],
+  Financial: ["An unexpected expense wipes it out","A tax bill or unexpected debt shows up","I undercharge or discount at the last minute","I give money away impulsively","I impulse spend or over-invest","N/A — this doesn't happen for me"],
+  Family: ["Family conflict arises — spouse/partner","Family conflict arises — kids","Family conflict arises — extended family","N/A — this doesn't happen for me"],
+  "Relationships/Social": ["A friendship suddenly becomes draining or falls apart","I start comparing myself to others and spiral","I withdraw or isolate","N/A — this doesn't happen for me"],
+  "Physical/Health": ["A health issue shows up","I get injured","Sleep problems or exhaustion hit suddenly","Anxiety or panic shows up","I get sick or run down","N/A — this doesn't happen for me"],
+  Spiritual: ["I start questioning if this is really God's will","I feel distant from God suddenly","Spiritual warfare feels heightened","N/A — this doesn't happen for me"],
+  "Business/Work": ["A client suddenly becomes a problem","I lose a key team member or contractor","Tech breaks down or systems fail","A launch flops right after a win","I get overwhelmed with admin and busy work","I start chasing shiny objects or pivoting","I start overgiving or undercharging","N/A — this doesn't happen for me"],
+  "Mental/Emotional": ["Imposter syndrome floods in","I freeze and stop taking action","I get hit with shame or old memories","I start numbing out — scrolling, Netflix, food, etc.","I get overwhelmed and slow down","I self-sabotage in some other way","I'm not sure — it just doesn't stick","N/A — this doesn't happen for me"],
 };
 
 const NON_MONEY = [
@@ -118,24 +128,96 @@ const NON_MONEY = [
 const COST_OPTS = ["Financial provision for my family","Time and margin","Peace and ease in my daily life","Confidence in my calling","The generational pattern I want to break","My physical health","My sense of fulfillment","My relationship with God around money"];
 
 const HB_CATS = [
-  { key: "overworking", name: "Overworking", qs: ["Volunteering for multiple community roles despite having a busy home life","Helping friends and family with their problems, even when you're facing your own challenges","Hosting social gatherings, even though you're often too tired","Taking on all household chores, even when feeling completely overwhelmed","Helping with every school event, despite a packed schedule","Organizing family vacations, even when you desperately need a break","Maintaining multiple hobbies, despite having very little free time","Helping neighbors with tasks, regardless of your own pressing responsibilities","Overcommitting to religious activities, even when it means neglecting self-care","Keeping up with fitness routines, even when physically exhausted","Babysitting for friends, even when you really need personal time","Coaching kids' sports teams, despite managing a demanding schedule","Caring for elderly family members without help, regardless of your own responsibilities","Taking on extensive DIY projects, even when your time is already stretched thin","Continuously learning new skills, despite being overloaded with commitments"] },
-  { key: "avoiding_judgment", name: "Avoiding Judgment", qs: ["Taking on additional responsibilities even when you already have enough on your plate","Dressing or presenting yourself in a way that feels socially acceptable rather than personal preference","Choosing a career path based on what's respected or admired rather than what excites you","Avoiding big decisions until you're sure others will approve","Changing your opinions or preferences to match the people around you","Keeping your home, car, or personal space at a certain standard to avoid negative comments","Feeling pressure to always be polite, agreeable, or easy to be around, even when it's exhausting","Attending social, work, or family events to avoid disappointing others","Over-explaining your choices","Offering to help others even when you don't have the capacity","Struggling to set boundaries because you don't want to seem selfish","Making purchases or lifestyle choices to maintain a specific image","Feeling guilty or anxious when others disapprove of your decisions","Holding back from expressing your true thoughts or needs","Apologizing or softening your words even when you haven't done anything wrong"] },
-  { key: "seeking_validation", name: "Seeking Validation", qs: ["Feeling the urge to share personal milestones, even when it's not relevant to the conversation","Volunteering for visible roles or projects, even when it adds stress","Taking on the responsibility of hosting events, even when optional","Speaking up in groups even when there's no real need to","Stepping into leadership roles, even when it's not the easiest path","Choosing outfits that ensure you get noticed in a crowd","Finding ways to bring up achievements, even in casual conversations","Helping others in ways that make sure your generosity is seen","Posting online frequently, even when there's no specific reason to","Seeking out exclusive groups, not just for networking, but for status","Giving advice often, even when people haven't asked for it","Rushing to share new information to be the first to say it","Feeling angry or upset when accomplishments go unnoticed","Seeking recognition or awards, even when they hold little personal meaning","Making unique or bold choices, even when it's not necessary"] },
-  { key: "avoiding_responsibility", name: "Avoiding Responsibility", qs: ["I often wait until the last minute to complete tasks, even when I have time to do them earlier","I tend to push off decisions, telling myself I'll figure it out later","I focus on enjoyable tasks or activities, even when I have more pressing responsibilities","I sometimes feel relieved when a responsibility is canceled or postponed","I frequently delay handling tasks that feel stressful or overwhelming","I put off conversations or decisions, hoping the situation will resolve itself","I find myself frequently shifting priorities, leaving some things unfinished","I sometimes rely on others to take the lead or handle responsibilities for me","I often tell myself I'll get to it later, but later keeps getting pushed back","I spend extra time on hobbies, entertainment, or distractions before tackling commitments","I prefer to wait until I feel ready before taking action on something important","I tend to avoid scheduling things too far in advance because I don't want to feel locked in","I often delay paperwork, financial planning, or important administrative tasks","I put off doctor's appointments, dental checkups, or personal care tasks, even when I know they're overdue","When I finally take action, I often wonder why I put it off for so long"] },
+  { key: "overworking", name: "Overworking", qs: [
+    "Volunteering for multiple community roles despite having a busy home life.",
+    "Helping friends and family with their problems, even when you're facing your own challenges.",
+    "Hosting social gatherings, even though you're often too tired.",
+    "Taking on all household chores, even when feeling completely overwhelmed.",
+    "Helping with every school event, despite a packed schedule.",
+    "Organizing family vacations, even when you desperately need a break.",
+    "Maintaining multiple hobbies, despite having very little free time.",
+    "Helping neighbors with tasks, regardless of your own pressing responsibilities.",
+    "Overcommitting to religious activities, even when it means neglecting self-care.",
+    "Keeping up with fitness routines, even when physically exhausted.",
+    "Babysitting for friends, even when you really need personal time.",
+    "Coaching kids' sports teams, despite managing a demanding schedule.",
+    "Caring for elderly family members without help, regardless of your own responsibilities.",
+    "Taking on extensive DIY projects, even when your time is already stretched thin.",
+    "Continuously learning new skills, despite being overloaded with commitments.",
+  ]},
+  { key: "avoiding_judgment", name: "Avoiding Judgment", qs: [
+    "Taking on additional responsibilities even when you already have enough on your plate.",
+    "Dressing or presenting yourself in a way that feels \"socially acceptable\" rather than personal preference.",
+    "Choosing a career path based on what's respected or admired rather than what excites you.",
+    "Avoiding big decisions until you're sure others will approve.",
+    "Changing your opinions or preferences to match the people around you.",
+    "Keeping your home, car, or personal space at a certain standard to avoid negative comments.",
+    "Feeling pressure to always be polite, agreeable, or \"easy to be around,\" even when it's exhausting.",
+    "Attending social, work, or family events to avoid disappointing others.",
+    "Over-explaining your choices.",
+    "Offering to help others even when you don't have the capacity.",
+    "Struggling to set boundaries because you don't want to seem selfish.",
+    "Making purchases or lifestyle choices to maintain a specific image.",
+    "Feeling guilty or anxious when others disapprove of your decisions.",
+    "Holding back from expressing your true thoughts or needs.",
+    "Apologizing or softening your words even when you haven't done anything wrong.",
+  ]},
+  { key: "seeking_validation", name: "Seeking Validation", qs: [
+    "Feeling like you need to earn your keep before you can fully relax or receive what's already yours.",
+    "Adding bonuses or extras to an offer that was already complete.",
+    "Feeling angry or deflated when your efforts go unacknowledged.",
+    "Going above and beyond what was asked.",
+    "Keeping a mental record of everything you've contributed.",
+    "Underpricing your services because you're not convinced what you offer is worth full price.",
+    "Feeling like an imposter in rooms you've been invited into — or worked hard into.",
+    "Overexplaining your qualifications or experience, even when no one questioned them.",
+    "Feeling proud of doing it all — but secretly needing others to notice how much you carry.",
+    "Throwing in additional support, resources, or access that wasn't promised.",
+    "Working harder than everyone else in the room, just to feel like you deserve to be there.",
+    "Finding ways to bring up achievements in conversation, even when they're not relevant.",
+    "Feeling relieved when someone compliments your work — but still not fully believing it.",
+    "Overdelivering on something that was already good enough.",
+    "Seeking recognition or affirmation even when you already knew the work was good.",
+  ]},
+  { key: "avoiding_responsibility", name: "Avoiding Responsibility", qs: [
+    "I often wait until the last minute to complete tasks, even when I have time to do them earlier.",
+    "I tend to push off decisions, telling myself I'll figure it out later.",
+    "I focus on enjoyable tasks or activities, even when I have more pressing responsibilities.",
+    "I sometimes feel relieved when a responsibility is canceled or postponed.",
+    "I frequently delay handling tasks that feel stressful or overwhelming.",
+    "I put off conversations or decisions, hoping the situation will resolve itself.",
+    "I find myself frequently shifting priorities, leaving some things unfinished.",
+    "I sometimes rely on others to take the lead or handle responsibilities for me.",
+    "I often tell myself, \"I'll get to it later,\" but later keeps getting pushed back.",
+    "I spend extra time on hobbies, entertainment, or distractions before tackling commitments.",
+    "I prefer to wait until I \"feel ready\" before taking action on something important.",
+    "I tend to avoid scheduling things too far in advance because I don't want to feel locked in.",
+    "I often delay paperwork, financial planning, or important administrative tasks.",
+    "I put off doctor's appointments, dental checkups, or personal care tasks, even when I know they're overdue.",
+    "When I finally take action, I often wonder why I put it off for so long.",
+  ]},
 ];
 
 const SP_DESC = {
-  "Ordinary": "Your nervous system doesn't yet know that more is possible for you. You're not striving toward a ceiling — you haven't yet seen the ceiling. The good news is everything is about to shift.",
-  "Familiar": "You've built something real — but your nervous system is keeping you in the Land of Familiar. It feels safe here. It feels known. And that safety is exactly what's keeping you from the next level.",
-  "Borderland": "You can see it. You know what's possible. You've probably even touched it. But something keeps pulling you back. You're right at the edge — and that's actually the most important place to be.",
-  "Promised Land": "You've crossed over in a lot of ways — but you haven't yet taken full possession of what's yours. There's more available than what you're currently receiving.",
+  "Ordinary": "Your nervous system is doing exactly what God designed it to do — protecting you based on what it learned to believe. It simply hasn't yet learned that more is available. This is where the renewing begins. And you are exactly where God expected you to be when He designed this moment for you.",
+  "Familiar": "You are living in what is comfortable. Your nervous system has decided this is the safe place to stay. It knows this level. It trusts this level. More is possible — and it's right outside the edge of what your nervous system currently knows is safe to receive.",
+  "Borderland": "You can see it. You've probably touched it. And something keeps bringing you back to the same place right before the breakthrough. You are closer than you have ever been. The edge is exactly where the renewing does its deepest work.",
+  "Promised Land": "You've crossed over in more ways than you realize. And there is still more available than what you're currently receiving. Full possession of what God promised is the work that remains — and your nervous system is ready to learn it's safe to hold all of it.",
 };
 
 const HB_DESC = {
-  overworking: "Your nervous system has learned that staying busy keeps you safe. If you're always working, you're always worthy. The problem is it's also keeping the ceiling exactly where it is.",
-  avoiding_judgment: "Your nervous system is protecting you from being seen. Because if you receive more — more money, more visibility, more success — more people are watching. And that feels dangerous.",
-  seeking_validation: "Your nervous system is keeping you just dependent enough on external approval that you can't fully trust your own receiving. You need someone else to say it's okay before you let it in.",
-  avoiding_responsibility: "Your nervous system has learned that having more means being responsible for more. And somewhere deep down, that feels like more than you want to carry.",
+  overworking: "Your nervous system responds to the belief that staying busy keeps you safe. If you were always working, you were always worthy. What becomes possible when that belief is renewed is a business that produces from rest — where your value is established in Christ, not earned by your output.
+
+Ephesians 2:10 — "We are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."",
+  avoiding_judgment: "Your nervous system responds to the belief that staying small keeps you safe from scrutiny. What becomes possible when that belief is renewed is the freedom to be fully seen — to receive more money, more visibility, more success — and trust that God's opinion of you is the only one your nervous system needs to protect.
+
+Psalm 139:14 — "I praise you because I am fearfully and wonderfully made."",
+  seeking_validation: "Your nervous system responds to the belief that you need permission before receiving. What becomes possible when that belief is renewed is the ability to trust your own discernment — to move when God opens a door without needing someone else to confirm it's safe to walk through.
+
+Philippians 4:13 — "I can do all things through Christ who strengthens me."",
+  avoiding_responsibility: "Your nervous system responds to the belief that having more means carrying more — and somewhere deep down that feels like too much. What becomes possible when that belief is renewed is the discovery that God never intended you to carry it alone. The weight of more was always meant to be shared with Him.
+
+Matthew 11:30 — "For my yoke is easy and my burden is light."",
 };
 
 const HB_NAME = { overworking: "Overworking", avoiding_judgment: "Avoiding Judgment", seeking_validation: "Seeking Validation", avoiding_responsibility: "Avoiding Responsibility" };
@@ -154,6 +236,49 @@ const INCOME_VAL = {
 
 const fmt = (n) => "$" + n.toLocaleString();
 
+// REPLACE with your GHL webhook URL
+const GHL_WEBHOOK = "https://hooks.leadconnectorhq.com/hooks/YOUR_WEBHOOK_URL_HERE";
+
+async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, incomeCeiling, annualCost }) {
+  try {
+    await fetch(GHL_WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName, lastName, email, phone,
+        tags: ["Kingdom Assessment", `Set Point: ${setPoint}`, `Hidden Benefit: ${HB_NAME[hiddenBenefit]}`],
+        customFields: { set_point: setPoint, hidden_benefit: HB_NAME[hiddenBenefit], income_ceiling: incomeCeiling, annual_cost: annualCost },
+      }),
+    });
+  } catch (e) { console.log("GHL webhook error:", e); }
+}
+
+function ContactForm({ onSubmit }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
+  const handleSubmit = async () => {
+    if (!firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim()) return;
+    setLoading(true);
+    await onSubmit({ firstName: firstName.trim(), lastName: lastName.trim(), email: email.trim(), phone: phone.trim() });
+    setLoading(false);
+  };
+  return (
+    <div className="contact-form">
+      <div className="reye" style={{marginBottom:12}}>Before I show you your results</div>
+      <div style={{fontSize:13,color:"#4E342E",fontWeight:300,marginBottom:18,lineHeight:1.7}}>I want to be able to follow up with you personally. Where should I send your results?</div>
+      <div className="contact-field"><label className="contact-label">First Name</label><input className="contact-input" placeholder="First name" value={firstName} onChange={e=>setFirstName(e.target.value)} /></div>
+      <div className="contact-field"><label className="contact-label">Last Name</label><input className="contact-input" placeholder="Last name" value={lastName} onChange={e=>setLastName(e.target.value)} /></div>
+      <div className="contact-field"><label className="contact-label">Email</label><input className="contact-input" type="email" placeholder="your@email.com" value={email} onChange={e=>setEmail(e.target.value)} /></div>
+      <div className="contact-field"><label className="contact-label">Mobile Phone (for SMS)</label><input className="contact-input" type="tel" placeholder="(555) 000-0000" value={phone} onChange={e=>setPhone(e.target.value)} /></div>
+      <button className="contact-submit" onClick={handleSubmit} disabled={loading || !firstName.trim() || !lastName.trim() || !email.trim() || !phone.trim()}>{loading ? "Sending..." : "Show Me My Results →"}</button>
+      <div className="contact-note">Your information is private and will never be shared.</div>
+    </div>
+  );
+}
+
 function getSetPoint(t) {
   const order = ["Ordinary","Familiar","Borderland","Promised Land"];
   let best = "Ordinary", bestVal = -1;
@@ -168,24 +293,67 @@ function getHB(scores) {
 }
 
 function MultiCat({ cats, onContinue }) {
-  const [sel, setSel] = useState([]);
-  const toggle = (x) => setSel(p => p.includes(x) ? p.filter(i=>i!==x) : [...p,x]);
+  const catEntries = Object.entries(cats);
+  const [step, setStep] = useState(0);
+  // Store selections per category key so going back preserves + allows changes
+  const [selBycat, setSelBycat] = useState({});
+  const [cat, items] = catEntries[step];
+  const catKey = cat;
+  const catSel = selBycat[catKey] || [];
+
+  const toggle = (x) => {
+    const isNA = x.startsWith("N/A");
+    setSelBycat(p => {
+      const prev = p[catKey] || [];
+      let next;
+      if (isNA) {
+        next = prev.includes(x) ? [] : [x];
+      } else {
+        const withoutNA = prev.filter(i => !i.startsWith("N/A"));
+        next = withoutNA.includes(x) ? withoutNA.filter(i => i !== x) : [...withoutNA, x];
+      }
+      return { ...p, [catKey]: next };
+    });
+  };
+
+  const isLast = step === catEntries.length - 1;
+
+  const next = () => {
+    if (isLast) {
+      const allSel = catEntries.flatMap(([k]) => selBycat[k] || []);
+      onContinue(allSel);
+    } else {
+      setStep(s => s + 1);
+    }
+  };
+
+  const regularItems = items.filter(i => !i.startsWith("N/A"));
+  const naItem = items.find(i => i.startsWith("N/A"));
+
   return (
     <div className="multi">
-      {Object.entries(cats).map(([cat, items]) => (
-        <div key={cat}>
-          <div className="mcat">{cat}</div>
-          <div className="mgrid">
-            {items.map(item => (
-              <button key={item} className={`chk ${sel.includes(item)?"on":""}`} onClick={()=>toggle(item)}>
-                <div className="chkbox">{sel.includes(item)?"✓":""}</div>
-                {item}
-              </button>
-            ))}
+      <div className="mcat">{cat}</div>
+      <div className="mgrid">
+        {regularItems.map(item => (
+          <button key={item} className={`chk ${catSel.includes(item)?"on":""}`} onClick={()=>toggle(item)}>
+            <div className="chkbox">{catSel.includes(item)?"✓":""}</div>
+            {item}
+          </button>
+        ))}
+        {naItem && (
+          <div>
+            <hr className="divider" />
+            <button key={naItem} className={`chk na ${catSel.includes(naItem)?"on":""}`} onClick={()=>toggle(naItem)}>
+              <div className="chkbox">{catSel.includes(naItem)?"✓":""}</div>
+              {naItem}
+            </button>
           </div>
-        </div>
-      ))}
-      <button className="cont" onClick={()=>onContinue(sel)}>Continue →</button>
+        )}
+      </div>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:10}}>
+        <span style={{fontSize:10,color:"#aaa",letterSpacing:1}}>{step+1} of {catEntries.length}</span>
+        <button className="cont" style={{marginTop:0}} onClick={next}>{isLast ? "Continue →" : "Next →"}</button>
+      </div>
     </div>
   );
 }
@@ -214,7 +382,7 @@ function HBSelect({ cat, onContinue }) {
   const score = Object.values(checked).filter(Boolean).length;
   return (
     <div className="multi">
-      <div style={{fontSize:12,fontWeight:400,color:"#4E342E",marginBottom:12}}>Does this feel familiar currently or in the past?</div>
+      <div style={{fontSize:12,fontWeight:400,color:"#4E342E",marginBottom:12}}>Does this feel familiar currently or in the past year?</div>
       <div className="mgrid">
         {cat.qs.map(q => (
           <button key={q} className={`chk ${checked[q]?"on":""}`} onClick={()=>toggle(q)}>
@@ -223,7 +391,7 @@ function HBSelect({ cat, onContinue }) {
           </button>
         ))}
       </div>
-      <button className="cont" onClick={()=>onContinue(score)}>Continue → ({score} selected)</button>
+      <button className="cont" onClick={()=>onContinue(score)}>Continue →</button>
     </div>
   );
 }
@@ -246,7 +414,7 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
 
       <div className="rsec">
         <div className="reye">Kingdom Abundance Set Point</div>
-        <div className="rhead">{sp} Set Point</div>
+        <div className="rhead">{sp}</div>
         <div className="rbody">{SP_DESC[sp]}</div>
       </div>
 
@@ -267,18 +435,18 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
           })}
         </div>
         <div style={{fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"#4E342E",marginTop:12,lineHeight:1.7,fontSize:14}}>
-          This isn't a character flaw. This is your nervous system doing exactly what it was designed to do — protecting you based on old data. The data just needs to be renewed.
+          Your nervous system is doing exactly what God designed it to do — protecting you based on what it perceived to be true. That perception is what needs to be renewed.
         </div>
       </div>
 
       <div className="rsec">
         <div className="reye">Financial Set Point</div>
-        <div className="rhead">Household Income Ceiling</div>
+        <div className="rhead">Monthly Income</div>
         <div className="rbody">{incomeCeiling}</div>
         <div className="reye" style={{marginTop:14}}>Consistent Money on Hand</div>
         <div className="rbody">{moneyOnHand}</div>
         {patterns.length>0&&<>
-          <div className="reye" style={{marginTop:14}}>When You Exceed Your Ceiling</div>
+          <div className="reye" style={{marginTop:14}}>When You Exceed Your Set Point</div>
           <ul className="rlist">{patterns.map(p=><li key={p}>{p}</li>)}</ul>
         </>}
       </div>
@@ -306,7 +474,7 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
       <div className="rsec">
         <div className="reye">The Real Cost</div>
         <div className="sgrid" style={{marginBottom:12}}>
-          <div className="sitem"><div className="sitem-l">Current Ceiling</div><div className="sitem-v">{incomeCeiling}</div></div>
+          <div className="sitem"><div className="sitem-l">Current Monthly Income</div><div className="sitem-v">{incomeCeiling}</div></div>
           <div className="sitem"><div className="sitem-l">Realistic Next Level</div><div className="sitem-v">{incomeNext}</div></div>
         </div>
         <div className="cost-box">
@@ -324,30 +492,31 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
       </div>
 
       <div className="rsec">
-        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:15,lineHeight:1.9,color:"#4E342E"}}>
-          You are not stuck because you lack strategy, faith, or effort. You are stuck because your Receptive Nervous System is doing exactly what it was programmed to do — keeping you at the level it learned was safe.
+        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:15,lineHeight:1.9,color:"#4E342E",fontStyle:"italic",marginBottom:14}}>
+          "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made." — Psalm 139:13-14
+        </div>
+        <div style={{fontSize:13,lineHeight:1.9,color:"#4E342E",fontWeight:300}}>
+          Your nervous system is doing exactly what God designed it to do — keeping you at the level it learned was safe. That's your Kingdom Abundance Set Point™. And it formed long before you had a business, long before you had theology to address it, and long before you had any say in the matter.
           <br/><br/>
-          Romans 12:2 says be transformed by the renewing of your mind. Not positive thinking. Actual renewal of the subconscious belief that has been generating these results.
-          <br/><br/>
-          That's the work. And it's available to you now.
+          Romans 12:2 says be transformed by the renewing of your mind. Actual renewal of the subconscious belief that has been generating these results. Where you become able to receive what God has been trying to give you.
         </div>
       </div>
 
-      <div style={{background:"linear-gradient(135deg,#006400 0%,#004d00 100%)",borderRadius:6,padding:"28px 24px"}}>
+      <div style={{background:"linear-gradient(135deg,#006400 0%,#4E342E 100%)",borderRadius:6,padding:"28px 24px"}}>
         <div style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:"uppercase",color:"#E88504",marginBottom:10}}>Your Next Step</div>
         <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:300,color:"white",marginBottom:14,lineHeight:1.4}}>
-          What we just did — that's the map.
+          What you just discovered is your Kingdom Abundance Set Point™.
         </div>
         <div style={{fontSize:13,lineHeight:1.85,color:"rgba(255,255,255,0.85)",fontWeight:300,marginBottom:20}}>
-          Inside <strong style={{color:"white",fontWeight:500}}>Renew & Receive™</strong> we take you all the way to the root memory where your hidden benefit was formed and invite Jesus to speak truth into it there. That's where the subconscious actually changes. That's where Romans 12:2 — <em style={{fontFamily:"'Cormorant Garamond',serif",fontSize:15}}>be transformed by the renewing of your mind</em> — actually happens.
+          Inside <strong style={{color:"white",fontWeight:500}}>Renew & Receive™</strong> we take you all the way to the root memory where it was formed and invite Jesus to heal the memory. That's where Romans 12:2 happens — at the subconscious level, where the belief was formed and where the nervous system learned what was safe to receive.
           <br/><br/>
-          It's 90 days. We do the deep work together. And on the other side, the ceiling lifts — not because you pushed harder, but because your nervous system finally learned it's safe to receive.
+          It's 90 days. We do the deep work together. And your nervous system learns it is safe to receive — so the glass ceiling breaks because the root was finally healed by Jesus.
         </div>
         <div style={{fontSize:14,fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"rgba(255,255,255,0.65)",borderTop:"1px solid rgba(255,255,255,0.15)",paddingTop:16,marginBottom:20}}>
-          The question isn't whether this is real. You just saw it in your own answers. The question is whether you're ready to stop bumping that ceiling.
+          You just saw your pattern in your own answers. If you feel ready to heal it, apply below.
         </div>
-        <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:14,fontWeight:300}}>This is an application process — not everyone is accepted. If you feel ready, apply below.</div>
-        <a href="https://www.kingdomalignment.academy/renew-receive" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#E88504",color:"white",padding:"13px 28px",borderRadius:4,fontFamily:"'Jost',sans-serif",fontSize:12,fontWeight:500,letterSpacing:"1.5px",textTransform:"uppercase",textDecoration:"none"}}>Apply for Renew & Receive™</a>
+        <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:14,fontWeight:300}}>This is an application process — we accept applicants who are ready for deep work.</div>
+        <a href="https://www.kingdomalignment.academy/renew-receive" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#E88504",color:"white",padding:"13px 28px",borderRadius:4,fontFamily:"'Montserrat',sans-serif",fontSize:12,fontWeight:500,letterSpacing:"1.5px",textTransform:"uppercase",textDecoration:"none"}}>Apply for Renew & Receive™</a>
       </div>
 
       <div style={{textAlign:"center",paddingTop:20}}>
@@ -376,10 +545,12 @@ export default function App() {
   const [costItems, setCostItems] = useState([]);
   const [hbScores, setHbScores] = useState({overworking:0,avoiding_judgment:0,seeking_validation:0,avoiding_responsibility:0});
   const [hbIdx, setHbIdx] = useState(0);
+  const [showContact, setShowContact] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [contact, setContact] = useState(null);
   const bottom = useRef(null);
 
-  useEffect(() => { bottom.current?.scrollIntoView({behavior:"smooth"}); }, [msgs, ui, typing, showResults]);
+  useEffect(() => { bottom.current?.scrollIntoView({behavior:"smooth"}); }, [msgs, ui, typing, showResults, showContact]);
 
   const say = (text, delay=0) => new Promise(res => setTimeout(()=>{ setMsgs(p=>[...p,{text,from:"s",id:Date.now()+Math.random()}]); res(); }, delay));
   const wait = (ms=1100) => new Promise(res=>{ setTyping(true); setTimeout(()=>{setTyping(false);res();},ms); });
@@ -410,9 +581,8 @@ export default function App() {
     setPhase("prayer");
   };
 
-  const handlePrayer = async (val) => {
-    if (val.trim().toLowerCase() !== "next") return;
-    userSay("Next"); setNameInput(""); setUi(null);
+  const handlePrayer = async () => {
+    userSay("Continue"); setNameInput(""); setUi(null);
     await wait(700); await say("I'm going to read you nine statements. For each one just tell me — consistently true, sometimes true, rarely true, or not at all. First reaction, don't overthink it.");
     await wait(500);
     setPhase("abundance"); setAIdx(0);
@@ -444,7 +614,7 @@ export default function App() {
     userSay(opt); setUi(null);
     if (next==="incomeceiling") {
       setIncomeCeil(opt);
-      await wait(700); await say("And when you exceed that number — what does your nervous system do to pull you back? Select everything that feels familiar.");
+      await wait(700); await say("And when you exceed your Set Point — what happens to pull you back? Select everything that feels familiar.");
       setUi({type:"multicat"});
     } else if (next==="moneyhand") {
       setMoneyHand(opt);
@@ -482,7 +652,7 @@ export default function App() {
 
   const handleCostItems = async (sel) => {
     setCostItems(sel); userSay(sel.length>0?`${sel.length} item${sel.length!==1?"s":""} selected`:"None selected"); setUi(null);
-    await wait(900); await say("Last set of questions — and these are different. I'm going to read statements and just ask if they feel familiar. If it takes more than three seconds, or you need to ask a clarifying question, that's a yes.");
+    await wait(900); await say("Last set of questions — and these are different. Read each statement and just ask yourself if it feels familiar in the last year. If it takes more than three seconds, that's a yes.");
     await wait(700); await say("Group 1 of 4.");
     setHbIdx(0); setUi({type:"hb",idx:0});
   };
@@ -495,9 +665,26 @@ export default function App() {
     if (nextIdx < HB_CATS.length) {
       setHbIdx(nextIdx); await wait(500); await say(`Group ${nextIdx+1} of 4.`); setUi({type:"hb",idx:nextIdx});
     } else {
-      await wait(1100); await say("I've been taking notes this whole time. Let me show you what I see.");
-      await wait(1400); setShowResults(true); setPhase("done");
+      await wait(1100); await say("I've been taking notes this whole time. Before I show you your results, I'd love to be able to follow up with you personally.");
+      await wait(800); setShowContact(true); setPhase("contact");
     }
+  };
+
+  const handleContact = async ({ firstName, lastName, email, phone }) => {
+    setContact({ firstName, lastName, email, phone });
+    userSay(`${firstName} ${lastName} — ${email}`);
+    setShowContact(false);
+    const sp = getSetPoint(tallies);
+    const hb = getHB(hbScores);
+    const cur = INCOME_VAL[incomeCeil]||0;
+    const nxt = INCOME_VAL[incNext]||0;
+    const annual = Math.max(0,(nxt-cur)*12);
+    await sendToGHL({ firstName, lastName, email, phone, setPoint: sp, hiddenBenefit: hb, incomeCeiling: incomeCeil, annualCost: annual });
+    await wait(800);
+    await say("Thank you. Let me show you what I see.");
+    await wait(1200);
+    setShowResults(true);
+    setPhase("done");
   };
 
   const prog = ()=>{
@@ -512,6 +699,7 @@ export default function App() {
     if (ui?.next==="incnext") return 66;
     if (ui?.type==="costflat") return 72;
     if (ui?.type==="hb") return 76+(hbIdx/4)*20;
+    if (phase==="contact") return 96;
     if (phase==="done") return 100;
     return 0;
   };
@@ -523,6 +711,7 @@ export default function App() {
     if (ui?.type==="nonmoney") return "Non-Money Set Points";
     if (ui?.next==="incnext"||ui?.type==="costflat") return "The Real Cost";
     if (ui?.type==="hb") return `Hidden Benefit Assessment — Group ${hbIdx+1} of 4`;
+    if (phase==="contact") return "Almost there";
     if (phase==="done") return "Complete";
     return "";
   };
@@ -606,17 +795,19 @@ export default function App() {
           </div>
         )}
         {phase==="prayer" && (
-          <div className="inrow">
-            <input className="txtin" placeholder="Type Next when ready..." value={nameInput} onChange={e=>setNameInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&handlePrayer(nameInput)} autoFocus />
-            <button className="sndbtn" onClick={()=>handlePrayer(nameInput)}>→</button>
+          <div style={{width:"100%",maxWidth:640,marginTop:10,animation:"fu .35s ease .15s forwards",opacity:0}}>
+            <button className="cont" style={{width:"100%",padding:"14px"}} onClick={handlePrayer}>I've prayed — Continue →</button>
           </div>
         )}
 
         {renderUI()}
 
+        {showContact && <ContactForm onSubmit={handleContact} />}
+
         {showResults && (
           <Results
-            name={name} tallies={tallies} hbScores={hbScores}
+            name={contact ? `${contact.firstName} ${contact.lastName}` : name}
+            tallies={tallies} hbScores={hbScores}
             incomeCeiling={incomeCeil} incomeNext={incNext}
             patterns={patterns} moneyOnHand={moneyHand}
             northStar={northStar} nonMoney={nonMoney} costItems={costItems}
