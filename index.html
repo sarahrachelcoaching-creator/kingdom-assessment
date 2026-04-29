@@ -192,7 +192,7 @@ function getSecondaryHB(s, primary) {
   for (const [k,v] of Object.entries(s)) { if (k !== primary && v > bv) { bv = v; b = k; } }
   return b;
 }
-async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, patterns, patternsByCategory, northStar }) {
+async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, costItems, patterns, patternsByCategory, northStar }) {
   try {
     await fetch(GHL_WEBHOOK, {
       method: "POST", headers: { "Content-Type": "application/json" },
@@ -223,6 +223,7 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
         hb_score_avoiding_judgment: (hbScores.avoiding_judgment || 0) + "/15",
         hb_score_seeking_validation: (hbScores.seeking_validation || 0) + "/15",
         hb_score_avoiding_responsibility: (hbScores.avoiding_responsibility || 0) + "/15",
+        non_money_costs: (costItems || []).join(", "),
         ...patternsByCategory,
       }),
     });
@@ -578,7 +579,7 @@ function App() {
       firstName, lastName, email, phone,
       setPoint: sp, hiddenBenefit: hb, secondaryHiddenBenefit: shb,
       incomeCeiling: incomeCeil, moneyOnHand: moneyHand, incomeNext: incNext,
-      annualCost: annual, hbScores, nonMoney, patterns,
+      annualCost: annual, hbScores, nonMoney, costItems, patterns,
       patternsByCategory: getPatternsByCategory(patterns),
       northStar,
     });
