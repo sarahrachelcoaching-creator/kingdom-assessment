@@ -192,36 +192,39 @@ function getSecondaryHB(s, primary) {
   for (const [k,v] of Object.entries(s)) { if (k !== primary && v > bv) { bv = v; b = k; } }
   return b;
 }
-async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, patterns, northStar }) {
+async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, patterns, patternsByCategory, northStar }) {
   try {
-    const tags = [
-      "KA-Assessment-Completed",
-      `KA-SetPoint-${setPoint.replace(/ /g,"")}`,
-      `KA-HB-${HB_NAME[hiddenBenefit].replace(/ /g,"")}`,
-    ];
-    const customFields = {
-      set_point: setPoint,
-      hidden_benefit: HB_NAME[hiddenBenefit],
-      secondary_hidden_benefit: secondaryHiddenBenefit ? HB_NAME[secondaryHiddenBenefit] : "",
-      monthly_income: incomeCeiling,
-      money_on_hand: moneyOnHand,
-      next_income_level: incomeNext,
-      annual_cost: fmt(annualCost),
-      decade_cost: fmt(annualCost * 10),
-      real_reason: northStar,
-      ease: nonMoney.ease || "",
-      rest: nonMoney.rest || "",
-      fulfillment: nonMoney.fulfillment || "",
-      relational: nonMoney.relational || "",
-      hb_score_overworking: (hbScores.overworking || 0) + "/15",
-      hb_score_avoiding_judgment: (hbScores.avoiding_judgment || 0) + "/15",
-      hb_score_seeking_validation: (hbScores.seeking_validation || 0) + "/15",
-      hb_score_avoiding_responsibility: (hbScores.avoiding_responsibility || 0) + "/15",
-      patterns: patterns.filter(p => !p.startsWith("N/A")).join(", "),
-    };
     await fetch(GHL_WEBHOOK, {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ firstName, lastName, email, phone, tags, customFields }),
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        phone,
+        tags: [
+          "KA-Assessment-Completed",
+          `KA-SetPoint-${setPoint.replace(/ /g,"")}`,
+          `KA-HB-${HB_NAME[hiddenBenefit].replace(/ /g,"")}`,
+        ],
+        set_point: setPoint,
+        hidden_benefit: HB_NAME[hiddenBenefit],
+        secondary_hidden_benefit: secondaryHiddenBenefit ? HB_NAME[secondaryHiddenBenefit] : "",
+        monthly_income: incomeCeiling,
+        money_on_hand: moneyOnHand,
+        next_income_level: incomeNext,
+        annual_cost: fmt(annualCost),
+        decade_cost: fmt(annualCost * 10),
+        real_reason: northStar,
+        ease: nonMoney.ease || "",
+        rest: nonMoney.rest || "",
+        fulfillment: nonMoney.fulfillment || "",
+        relational: nonMoney.relational || "",
+        hb_score_overworking: (hbScores.overworking || 0) + "/15",
+        hb_score_avoiding_judgment: (hbScores.avoiding_judgment || 0) + "/15",
+        hb_score_seeking_validation: (hbScores.seeking_validation || 0) + "/15",
+        hb_score_avoiding_responsibility: (hbScores.avoiding_responsibility || 0) + "/15",
+        ...patternsByCategory,
+      }),
     });
   } catch(e) { console.log("GHL error:", e); }
 }
@@ -535,6 +538,16 @@ function App() {
     setUi({type:"single",opts:MONEY_OPTS,next:"moneyhand"});
   };
 
+  const getPatternsByCategory = (sel) => {
+    const clean = sel.filter(p => !p.startsWith("N/A"));
+    const result = {};
+    for (const [cat, items] of Object.entries(PATTERN_CATS)) {
+      const key = "patterns_" + cat.toLowerCase().replace(/[^a-z0-9]+/g,"_").replace(/_$/,"");
+      result[key] = items.filter(i => clean.includes(i)).join(", ");
+    }
+    return result;
+  };
+
   const handleCostItems = async sel => {
     setCostItems(sel); userSay(sel.length>0?`${sel.length} item${sel.length!==1?"s":""} selected`:"None selected"); setUi(null);
     await wait(900); await say("Last set of questions — and these are different. Read each statement and just ask yourself if it feels familiar in the last year. If it takes more than three seconds, that's a yes.");
@@ -565,7 +578,9 @@ function App() {
       firstName, lastName, email, phone,
       setPoint: sp, hiddenBenefit: hb, secondaryHiddenBenefit: shb,
       incomeCeiling: incomeCeil, moneyOnHand: moneyHand, incomeNext: incNext,
-      annualCost: annual, hbScores, nonMoney, patterns, northStar,
+      annualCost: annual, hbScores, nonMoney, patterns,
+      patternsByCategory: getPatternsByCategory(patterns),
+      northStar,
     });
     await wait(800); await say("Thank you. Let me show you what I see.");
     await wait(1200); setShowResults(true); setPhase("done");
