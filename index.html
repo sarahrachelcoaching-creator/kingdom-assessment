@@ -192,7 +192,7 @@ function getSecondaryHB(s, primary) {
   for (const [k,v] of Object.entries(s)) { if (k !== primary && v > bv) { bv = v; b = k; } }
   return b;
 }
-async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, costItems, patterns, patternsByCategory, northStar }) {
+async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBenefit, secondaryHiddenBenefit, hiddenBenefitDescription, incomeCeiling, moneyOnHand, incomeNext, annualCost, hbScores, nonMoney, costItems, patterns, patternsByCategory, northStar }) {
   try {
     await fetch(GHL_WEBHOOK, {
       method: "POST", headers: { "Content-Type": "application/json" },
@@ -209,7 +209,7 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
         customFields: {
           set_point: setPoint,
           hidden_benefit: HB_NAME[hiddenBenefit],
-          hidden_benefit_description: (HB_DATA[hiddenBenefit] && HB_DATA[hiddenBenefit].desc) ? (HB_DATA[hiddenBenefit].desc + " " + HB_DATA[hiddenBenefit].scripture) : "No description available",
+          hidden_benefit_description: hiddenBenefitDescription,
           secondary_hidden_benefit: secondaryHiddenBenefit ? HB_NAME[secondaryHiddenBenefit] : "",
           monthly_income: incomeCeiling,
           money_on_hand: moneyOnHand,
@@ -576,11 +576,18 @@ function App() {
     userSay(`${firstName} ${lastName} — ${email}`);
     setShowContact(false);
     const sp = getSP(tallies), hb = getHB(hbScores), shb = getSecondaryHB(hbScores, hb);
+    const descMap = {
+      overworking: "Your nervous system responds to the belief that staying busy keeps you safe. If you were always working, you were always worthy. What becomes possible when that belief is renewed is a business that produces from rest — where your value is established in Christ, not earned by your output. Ephesians 2:10 — We are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
+      avoiding_judgment: "Your nervous system responds to the belief that staying small keeps you safe from scrutiny. What becomes possible when that belief is renewed is the freedom to be fully seen — to receive more money, more visibility, more success — and trust that God's opinion of you is the only one your nervous system needs to protect. Psalm 139:14 — I praise you because I am fearfully and wonderfully made.",
+      seeking_validation: "Your nervous system responds to the belief that you need permission before receiving. What becomes possible when that belief is renewed is the ability to trust your own discernment — to move when God opens a door without needing someone else to confirm it's safe to walk through. Philippians 4:13 — I can do all things through Christ who strengthens me.",
+      avoiding_responsibility: "Your nervous system responds to the belief that having more means carrying more — and somewhere deep down that feels like too much. What becomes possible when that belief is renewed is the discovery that God never intended you to carry it alone. The weight of more was always meant to be shared with Him. Matthew 11:30 — For my yoke is easy and my burden is light."
+    };
+    const hbDesc = descMap[hb] || "";
     const cur = INCOME_VAL[incomeCeil]||0, nxt = INCOME_VAL[incNext]||0;
     const annual = Math.max(0,(nxt-cur)*12);
     await sendToGHL({
       firstName, lastName, email, phone,
-      setPoint: sp, hiddenBenefit: hb, secondaryHiddenBenefit: shb,
+      setPoint: sp, hiddenBenefit: hb, secondaryHiddenBenefit: shb, hiddenBenefitDescription: hbDesc,
       incomeCeiling: incomeCeil, moneyOnHand: moneyHand, incomeNext: incNext,
       annualCost: annual, hbScores, nonMoney, costItems, patterns,
       patternsByCategory: getPatternsByCategory(patterns),
