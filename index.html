@@ -209,7 +209,7 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
         customFields: {
           set_point: setPoint,
           hidden_benefit: HB_NAME[hiddenBenefit],
-          hidden_benefit_description: HB_DATA[hiddenBenefit] ? HB_DATA[hiddenBenefit].desc + " " + HB_DATA[hiddenBenefit].scripture : "",
+          hidden_benefit_description: (HB_DATA[hiddenBenefit] && HB_DATA[hiddenBenefit].desc) ? (HB_DATA[hiddenBenefit].desc + " " + HB_DATA[hiddenBenefit].scripture) : "No description available",
           secondary_hidden_benefit: secondaryHiddenBenefit ? HB_NAME[secondaryHiddenBenefit] : "",
           monthly_income: incomeCeiling,
           money_on_hand: moneyOnHand,
