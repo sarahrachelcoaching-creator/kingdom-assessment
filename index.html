@@ -174,7 +174,7 @@ const INCOME_VAL = {
 };
 
 const fmt = n => "$" + n.toLocaleString();
-const GHL_WEBHOOK = "https://services.leadconnectorhq.com/hooks/Hn2vIVojfOqC5cmS541Q/webhook-trigger/c442089c-e92f-498c-b90b-d7ea95a1d62b";
+const GHL_WEBHOOK = "https://hooks.leadconnectorhq.com/hooks/YOUR_WEBHOOK_URL_HERE";
 
 function getSP(t) {
   const o = ["Ordinary","Familiar","Borderland","Promised Land"];
@@ -209,6 +209,7 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
         customFields: {
           set_point: setPoint,
           hidden_benefit: HB_NAME[hiddenBenefit],
+          hidden_benefit_description: HB_DATA[hiddenBenefit] ? HB_DATA[hiddenBenefit].desc + " " + HB_DATA[hiddenBenefit].scripture : "",
           secondary_hidden_benefit: secondaryHiddenBenefit ? HB_NAME[secondaryHiddenBenefit] : "",
           monthly_income: incomeCeiling,
           money_on_hand: moneyOnHand,
