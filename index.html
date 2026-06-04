@@ -26,12 +26,12 @@ body{font-family:'Montserrat',sans-serif;background:#FAF6F0;}
 .bub{max-width:84%;padding:12px 16px;border-radius:4px;font-size:13.5px;line-height:1.75;font-weight:300;}
 .bub.s{background:#FDF6EE;color:#2C1510;border:1px solid rgba(78,52,46,.2);border-top-left-radius:0;box-shadow:0 2px 8px rgba(0,0,0,.06);}
 .bub.u{background:#4E342E;color:#FDF6EE;border-top-right-radius:0;}
-.opts{width:100%;max-width:640px;display:flex;flex-direction:column;gap:7px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
-.opt{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:11px 16px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;color:#4E342E;transition:all .2s;line-height:1.5;}
+.opts{width:100%;max-width:640px;display:flex;flex-direction:column;gap:9px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:10px;}
+.opt{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:13px 18px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:300;color:#4E342E;transition:all .2s;line-height:1.6;}
 .opt:hover{border-color:#E88504;background:#FEF3E2;}
 .qlabel{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:#4E342E;margin-bottom:10px;line-height:1.5;}
 .qnum{font-size:11px;color:#4E342E;opacity:.5;margin-bottom:6px;}
-.multi{width:100%;max-width:640px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:4px;}
+.multi{width:100%;max-width:640px;animation:fu .35s ease .15s forwards;opacity:0;margin-top:14px;}
 .mcat{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin:14px 0 7px;}
 .mgrid{display:flex;flex-direction:column;gap:6px;}
 .chk{background:white;border:1px solid rgba(78,52,46,.2);border-radius:4px;padding:9px 13px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:300;color:#4E342E;transition:all .2s;display:flex;align-items:flex-start;gap:7px;line-height:1.5;}
@@ -57,7 +57,7 @@ body{font-family:'Montserrat',sans-serif;background:#FAF6F0;}
 .txtin:focus{border-color:#E88504;}
 .sndbtn{background:#E88504;color:white;border:none;border-radius:4px;padding:11px 18px;cursor:pointer;font-size:13px;transition:background .2s;}
 .sndbtn:hover{background:#c97000;}
-.prayer-btn{width:100%;max-width:640px;margin-top:10px;animation:fu .35s ease .15s forwards;opacity:0;}
+.prayer-btn{width:100%;max-width:640px;margin-top:24px;animation:fu .35s ease .15s forwards;opacity:0;}
 .rcard{background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;padding:28px;width:100%;max-width:640px;animation:fu .5s ease forwards;opacity:0;box-shadow:0 4px 20px rgba(0,0,0,.08);margin-top:24px;}
 .rsec{margin-bottom:26px;padding-bottom:26px;border-bottom:1px solid rgba(78,52,46,.1);}
 .rsec:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
@@ -79,7 +79,7 @@ body{font-family:'Montserrat',sans-serif;background:#FAF6F0;}
 .sitem-v{font-size:12px;color:#4E342E;font-weight:300;line-height:1.5;}
 .score-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(78,52,46,.06);}
 .score-row:last-child{border-bottom:none;}
-.scripture{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#4E342E;margin-top:12px;line-height:1.7;border-left:2px solid #E88504;padding-left:12px;}
+.scripture{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#4E342E;margin-top:12px;line-height:1.7;border-left:2px solid #E88504;padding-left:12px;}
 .contact-form{width:100%;max-width:640px;background:#FDF6EE;border:1px solid rgba(78,52,46,.15);border-radius:4px;padding:24px;margin-top:16px;animation:fu .35s ease forwards;opacity:0;}
 .contact-field{margin-bottom:14px;}
 .contact-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:#E88504;margin-bottom:6px;display:block;}
@@ -118,8 +118,17 @@ const ANS_OPTS = [
   { label: "Not At All", level: "Ordinary" },
 ];
 
-const INCOME_OPTS = ["Under $3,000/month","$3,000–$5,000/month","$5,000–$8,000/month","$8,000–$12,000/month","$12,000–$20,000/month","$20,000–$30,000/month","$30,000–$50,000/month","$50,000–$75,000/month","$75,000–$100,000/month","$100,000+/month"];
-const INCOME_NEXT_OPTS = ["$5,000–$8,000/month","$8,000–$12,000/month","$12,000–$20,000/month","$20,000–$30,000/month","$30,000–$50,000/month","$50,000–$75,000/month","$75,000–$100,000/month","$100,000+/month"];
+const INCOME_OPTS = ["Under $10,000/month","$10,000–$20,000/month","$20,000–$50,000/month","$50,000–$100,000/month","$100,000–$200,000/month","$200,000+/month"];
+const INCOME_NEXT_OPTS = ["Under $3,000/month","$3,000–$5,000/month","$5,000–$8,000/month","$8,000–$10,000/month","$10,000–$12,000/month","$12,000–$15,000/month","$15,000–$20,000/month","$20,000–$25,000/month","$25,000–$30,000/month","$30,000–$40,000/month","$40,000–$50,000/month","$50,000–$75,000/month","$75,000–$100,000/month","$100,000–$150,000/month","$150,000–$200,000/month","$200,000–$300,000/month","$300,000–$500,000/month","$500,000+/month"];
+
+const INCOME_DRILL = {
+  "Under $10,000/month": ["Under $3,000/month","$3,000–$5,000/month","$5,000–$8,000/month","$8,000–$10,000/month"],
+  "$10,000–$20,000/month": ["$10,000–$12,000/month","$12,000–$15,000/month","$15,000–$20,000/month"],
+  "$20,000–$50,000/month": ["$20,000–$25,000/month","$25,000–$30,000/month","$30,000–$40,000/month","$40,000–$50,000/month"],
+  "$50,000–$100,000/month": ["$50,000–$75,000/month","$75,000–$100,000/month"],
+  "$100,000–$200,000/month": ["$100,000–$150,000/month","$150,000–$200,000/month"],
+  "$200,000+/month": ["$200,000–$300,000/month","$300,000–$500,000/month","$500,000+/month"],
+};
 const MONEY_OPTS = ["At zero or in the negative","Less than one month of expenses","1–3 months of expenses","3–6 months of expenses","6+ months — genuinely secure"];
 
 const PATTERN_CATS = {
@@ -142,35 +151,48 @@ const NON_MONEY = [
 const COST_OPTS = ["Financial provision for my family","Time and margin","Peace and ease in my daily life","Confidence in my calling","The generational pattern I want to break","My physical health","My sense of fulfillment","My relationship with God around money"];
 
 const HB_CATS = [
-  { key: "overworking", name: "Overworking", qs: ["Volunteering for multiple community roles despite having a busy home life.","Helping friends and family with their problems, even when you're facing your own challenges.","Hosting social gatherings, even though you're often too tired.","Taking on all household chores, even when feeling completely overwhelmed.","Helping with every school event, despite a packed schedule.","Organizing family vacations, even when you desperately need a break.","Maintaining multiple hobbies, despite having very little free time.","Helping neighbors with tasks, regardless of your own pressing responsibilities.","Overcommitting to religious activities, even when it means neglecting self-care.","Keeping up with fitness routines, even when physically exhausted.","Babysitting for friends, even when you really need personal time.","Coaching kids' sports teams, despite managing a demanding schedule.","Caring for elderly family members without help, regardless of your own responsibilities.","Taking on extensive DIY projects, even when your time is already stretched thin.","Continuously learning new skills, despite being overloaded with commitments."] },
-  { key: "avoiding_judgment", name: "Avoiding Judgment", qs: ["Taking on additional responsibilities even when you already have enough on your plate.","Dressing or presenting yourself in a way that feels 'socially acceptable' rather than personal preference.","Choosing a career path based on what's respected or admired rather than what excites you.","Avoiding big decisions until you're sure others will approve.","Changing your opinions or preferences to match the people around you.","Keeping your home, car, or personal space at a certain standard to avoid negative comments.","Feeling pressure to always be polite, agreeable, or 'easy to be around,' even when it's exhausting.","Attending social, work, or family events to avoid disappointing others.","Over-explaining your choices.","Offering to help others even when you don't have the capacity.","Struggling to set boundaries because you don't want to seem selfish.","Making purchases or lifestyle choices to maintain a specific image.","Feeling guilty or anxious when others disapprove of your decisions.","Holding back from expressing your true thoughts or needs.","Apologizing or softening your words even when you haven't done anything wrong."] },
-  { key: "seeking_validation", name: "Seeking Validation", qs: ["Feeling like you need to earn your keep before you can fully relax or receive what's already yours.","Adding bonuses or extras to an offer that was already complete.","Feeling angry or deflated when your efforts go unacknowledged.","Going above and beyond what was asked.","Keeping a mental record of everything you've contributed.","Underpricing your services because you're not convinced what you offer is worth full price.","Feeling like an imposter in rooms you've been invited into — or worked hard into.","Overexplaining your qualifications or experience, even when no one questioned them.","Feeling proud of doing it all — but secretly needing others to notice how much you carry.","Throwing in additional support, resources, or access that wasn't promised.","Working harder than everyone else in the room, just to feel like you deserve to be there.","Finding ways to bring up achievements in conversation, even when they're not relevant.","Feeling relieved when someone compliments your work — but still not fully believing it.","Overdelivering on something that was already good enough.","Seeking recognition or affirmation even when you already knew the work was good."] },
-  { key: "avoiding_responsibility", name: "Avoiding Responsibility", qs: ["I often wait until the last minute to complete tasks, even when I have time to do them earlier.","I tend to push off decisions, telling myself I'll figure it out later.","I focus on enjoyable tasks or activities, even when I have more pressing responsibilities.","I sometimes feel relieved when a responsibility is canceled or postponed.","I frequently delay handling tasks that feel stressful or overwhelming.","I put off conversations or decisions, hoping the situation will resolve itself.","I find myself frequently shifting priorities, leaving some things unfinished.","I sometimes rely on others to take the lead or handle responsibilities for me.","I often tell myself, 'I'll get to it later,' but later keeps getting pushed back.","I spend extra time on hobbies, entertainment, or distractions before tackling commitments.","I prefer to wait until I 'feel ready' before taking action on something important.","I tend to avoid scheduling things too far in advance because I don't want to feel locked in.","I often delay paperwork, financial planning, or important administrative tasks.","I put off doctor's appointments, dental checkups, or personal care tasks, even when I know they're overdue.","When I finally take action, I often wonder why I put it off for so long."] },
+  { key: "seeking_control", name: "Seeking Control", qs: ["I often end up doing every household task myself because no one else does it right.","I tend to manage every detail of a plan, because it won't go right unless I'm running it.","I sometimes redo other people's work when it wasn't done the way I would have.","I find it hard to delegate, because handing something off feels like losing control.","I tend to fill my free time with something, because sitting still leaves me restless.","I often feel anxious or on edge when I'm not being productive.","I find it hard to rest, because it feels like things will fall apart if I stop.","I sometimes stay busy so I don't have to slow down and feel what's underneath.","I rarely skip my routine, because missing even once feels like slipping.","I often keep adding more to stay ahead, even when I'm already maxed out.","I tend to plan for every what-if so nothing catches me off guard.","I frequently check and re-check things to make sure nothing slips.","I usually take the lead on group projects, because I don't quite trust the outcome otherwise.","I tend to take on big projects myself rather than trust them to anyone else.","I often find it hard to switch off, even on a day meant for rest."] },
+  { key: "avoiding_judgment", name: "Avoiding Judgment", qs: ["I often dress how I'm 'supposed to' rather than how I'd actually choose.","I tend to put off big decisions until I'm fairly sure others will approve.","I sometimes shift my opinions to match whoever I'm around.","I tend to keep my home or car a certain way to avoid comments.","I often stay agreeable and 'easy,' even when it's tiring, so no one has a reason to dislike me.","I sometimes go to events I'd rather skip just to avoid disappointing anyone.","I tend to over-explain my choices so no one can criticize them.","I often offer help I don't really have time for, so I'm not seen as unhelpful.","I find it hard to say no, because I don't want to seem selfish.","I often feel guilty or anxious when someone disapproves of me.","I tend to hold back my real thoughts or needs to avoid pushback.","I sometimes apologize or soften my words even when I did nothing wrong.","I tend to stay quiet in a disagreement so I don't rock the boat.","I sometimes hide the parts of my life I think people would judge.","I tend to avoid new things where I might look foolish in front of others."] },
+  { key: "seeking_recognition", name: "Seeking Recognition", qs: ["I often feel like I have to earn my keep before I can relax or receive.","I tend to add extras to something that was already complete, so it feels like enough.","I often feel deflated when my effort goes unacknowledged.","I tend to go above and beyond, partly so the effort gets noticed.","I sometimes keep a mental tally of everything I've contributed.","I tend to underprice, because I'm not fully convinced my work is worth full price.","I sometimes feel like an imposter, even in rooms I earned my way into.","I often over-explain my qualifications, even when no one questioned them.","I tend to do it all, but secretly I need others to notice how much I carry.","I sometimes throw in extras I never promised, so people value what I gave.","I often work harder than everyone else, just to feel I deserve to be there.","I sometimes find ways to bring up my achievements, even when they're not relevant.","I feel relieved when someone compliments my work, but I still don't quite believe it.","I tend to overdeliver on things that were already enough, hoping it gets noticed.","I sometimes seek reassurance even when I already knew the work was good."] },
+  { key: "avoiding_pressure", name: "Avoiding Pressure", qs: ["I often wait until the last minute to complete tasks, even when I have time to do them earlier.","I tend to push off decisions, telling myself I'll figure it out later.","I focus on enjoyable tasks or activities, even when I have more pressing responsibilities.","I sometimes feel relieved when a responsibility is canceled or postponed.","I frequently delay handling tasks that feel stressful or overwhelming.","I put off conversations or decisions, hoping the situation will resolve itself.","I find myself frequently shifting priorities, leaving some things unfinished.","I sometimes rely on others to take the lead or handle responsibilities for me.","I often tell myself, 'I'll get to it later,' but later keeps getting pushed back.","I spend extra time on hobbies, entertainment, or distractions before tackling commitments.","I prefer to wait until I 'feel ready' before taking action on something important.","I tend to avoid scheduling things too far in advance because I don't want to feel locked in.","I often delay paperwork, financial planning, or important administrative tasks.","I put off doctor's appointments, dental checkups, or personal care tasks, even when I know they're overdue.","When I finally take action, I often wonder why I put it off for so long."] },
 ];
 
 const SP_DESC = {
   "Ordinary": "Your nervous system is doing exactly what God designed it to do — protecting you based on what it learned to believe. It simply hasn't yet learned that more is available. This is where the renewing begins. And you are exactly where God expected you to be when He designed this moment for you.",
   "Familiar": "You are living in what is comfortable. Your nervous system has decided this is the safe place to stay. It knows this level. It trusts this level. More is possible — and it's right outside the edge of what your nervous system currently knows is safe to receive.",
-  "Borderland": "You can see it. You've probably touched it. And something keeps bringing you back to the same place right before the breakthrough. You are closer than you have ever been. The edge is exactly where the renewing does its deepest work.",
-  "Promised Land": "You've crossed over in more ways than you realize. And there is still more available than what you're currently receiving. Full possession of what God promised is the work that remains — and your nervous system is ready to learn it's safe to hold all of it.",
+  "Borderland": "You can see it. You've probably touched it. And your nervous system operates a protective cycle that naturally contracts right before the breakthrough to keep you safe. You are closer than you have ever been. The edge is exactly where the renewing does its deepest work.",
+  "Promised Land": "You've crossed over in more ways than you realize. And there is still more available than what you're currently receiving. Full possession of what God promised is the work that remains — and your nervous system is ready to learn it's safe to hold all of it with ease.",
 };
 
 const HB_DATA = {
-  overworking: { desc: "Your nervous system responds to the belief that staying busy keeps you safe. If you were always working, you were always worthy. What becomes possible when that belief is renewed is a business that produces from rest — where your value is established in Christ, not earned by your output.", scripture: 'Ephesians 2:10 — "We are God\'s handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do."' },
-  avoiding_judgment: { desc: "Your nervous system responds to the belief that staying small keeps you safe from scrutiny. What becomes possible when that belief is renewed is the freedom to be fully seen — to receive more money, more visibility, more success — and trust that God's opinion of you is the only one your nervous system needs to protect.", scripture: 'Psalm 139:14 — "I praise you because I am fearfully and wonderfully made."' },
-  seeking_validation: { desc: "Your nervous system responds to the belief that you need permission before receiving. What becomes possible when that belief is renewed is the ability to trust your own discernment — to move when God opens a door without needing someone else to confirm it's safe to walk through.", scripture: 'Philippians 4:13 — "I can do all things through Christ who strengthens me."' },
-  avoiding_responsibility: { desc: "Your nervous system responds to the belief that having more means carrying more — and somewhere deep down that feels like too much. What becomes possible when that belief is renewed is the discovery that God never intended you to carry it alone. The weight of more was always meant to be shared with Him.", scripture: 'Matthew 11:30 — "For my yoke is easy and my burden is light."' },
+  seeking_control: { desc: "Your nervous system operates a protective cycle based on the automatic rule that you are only safe when you are carrying every variable yourself. Delegation feels like exposure. Letting go feels like danger. What becomes possible when that rule is renewed is a business that scales beyond what one person can hold — where trusting others is not a risk, but a beautiful sign that your nervous system has finally learned it is safe to receive support.", scripture: 'Romans 8:28 — "And we know that in all things God works for the good of those who love him, who have been called according to his purpose."' },
+  avoiding_judgment: { desc: "Your nervous system operates a protective cycle that associates being fully seen with being targeted, so it keeps you insulated behind endless preparation, polished offers, and flawless execution. What becomes possible when that cycle is renewed is the absolute freedom to be visible and launch before you're perfect — and to trust that God's love is the only baseline that was ever keeping score.", scripture: 'Romans 8:1 — "There is now no condemnation for those who are in Christ Jesus."' },
+  seeking_recognition: { desc: "Your nervous system operates a protective cycle based on the subconscious belief that your safety and worth must be actively proven through output. Rest feels unsafe. Receiving feels unearned. What becomes possible when that cycle is renewed is the ability to finally slow down and receive what you've already built — where your value is established securely in Christ, not verified by your next achievement.", scripture: 'Romans 8:17 — "Now if we are children, then we are heirs — heirs of God and co-heirs with Christ, if indeed we share in his sufferings in order that we may also share in his glory."' },
+  avoiding_pressure: { desc: "Your nervous system operates a protective cycle based on the rule that the next level will automatically cost you everything — your freedom, your family, your peace. So the moment a major breakthrough appears, your body hits the brakes. What becomes possible when that architecture is renewed is the discovery that God never designed the next level to crush you. The weight of more was always meant to be carried in rest with Him.", scripture: 'Matthew 11:30 — "For my yoke is easy and my burden is light."' },
 };
 
-const HB_NAME = { overworking: "Overworking", avoiding_judgment: "Avoiding Judgment", seeking_validation: "Seeking Validation", avoiding_responsibility: "Avoiding Responsibility" };
+const HB_NAME = { seeking_control: "Seeking Control", avoiding_judgment: "Avoiding Judgment", seeking_recognition: "Seeking Recognition", avoiding_pressure: "Avoiding Pressure" };
 const NM_LABELS = { ease: "Ease vs. Striving", rest: "Rest & Margin", fulfillment: "Fulfillment", relational: "Relational Richness" };
 
 const INCOME_VAL = {
-  "Under $3,000/month": 2000, "$3,000–$5,000/month": 4000, "$5,000–$8,000/month": 6500,
-  "$8,000–$12,000/month": 10000, "$12,000–$20,000/month": 16000,
-  "$20,000–$30,000/month": 25000, "$30,000–$50,000/month": 40000,
-  "$50,000–$75,000/month": 62500, "$75,000–$100,000/month": 87500,
-  "$100,000+/month": 110000,
+  "Under $3,000/month": 2000,
+  "$3,000–$5,000/month": 4000,
+  "$5,000–$8,000/month": 6500,
+  "$8,000–$10,000/month": 9000,
+  "$10,000–$12,000/month": 11000,
+  "$12,000–$15,000/month": 13500,
+  "$15,000–$20,000/month": 17500,
+  "$20,000–$25,000/month": 22500,
+  "$25,000–$30,000/month": 27500,
+  "$30,000–$40,000/month": 35000,
+  "$40,000–$50,000/month": 45000,
+  "$50,000–$75,000/month": 62500,
+  "$75,000–$100,000/month": 87500,
+  "$100,000–$150,000/month": 125000,
+  "$150,000–$200,000/month": 175000,
+  "$200,000–$300,000/month": 250000,
+  "$300,000–$500,000/month": 400000,
+  "$500,000+/month": 550000,
 };
 
 const fmt = n => "$" + n.toLocaleString();
@@ -183,7 +205,7 @@ function getSP(t) {
   return b;
 }
 function getHB(s) {
-  let b = "overworking", bv = -1;
+  let b = "seeking_control", bv = -1;
   for (const [k,v] of Object.entries(s)) { if (v > bv) { bv = v; b = k; } }
   return b;
 }
@@ -202,9 +224,7 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
         email,
         phone,
         tags: [
-          "KA-Assessment-Completed",
-          `KA-SetPoint-${setPoint.replace(/ /g,"")}`,
-          `KA-HB-${HB_NAME[hiddenBenefit].replace(/ /g,"")}`,
+          HB_NAME[hiddenBenefit],
         ],
         customFields: {
           set_point: setPoint,
@@ -221,10 +241,10 @@ async function sendToGHL({ firstName, lastName, email, phone, setPoint, hiddenBe
           rest: nonMoney.rest || "",
           fulfillment: nonMoney.fulfillment || "",
           relational: nonMoney.relational || "",
-          hb_score_overworking: (hbScores.overworking || 0) + "/15",
+          hb_score_seeking_control: (hbScores.seeking_control || 0) + "/15",
           hb_score_avoiding_judgment: (hbScores.avoiding_judgment || 0) + "/15",
-          hb_score_seeking_validation: (hbScores.seeking_validation || 0) + "/15",
-          hb_score_avoiding_responsibility: (hbScores.avoiding_responsibility || 0) + "/15",
+          hb_score_seeking_recognition: (hbScores.seeking_recognition || 0) + "/15",
+          hb_score_avoiding_pressure: (hbScores.avoiding_pressure || 0) + "/15",
           non_money_costs: (costItems || []).join(", "),
           ...patternsByCategory,
         },
@@ -399,27 +419,29 @@ function Results({ name, tallies, hbScores, incomeCeiling, incomeNext, patterns,
         {costItems.length>0&&<><div className="reye" style={{marginTop:14}}>Beyond Money, This Is Costing You</div><ul className="rlist">{costItems.map(c=><li key={c}>{c}</li>)}</ul></>}
       </div>
       <div className="rsec">
-        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:15,lineHeight:1.9,color:"#4E342E",fontStyle:"italic",marginBottom:14}}>
-          "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made." — Psalm 139:13-14
+        <div style={{fontSize:16,fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"#4E342E",marginBottom:14,lineHeight:1.8}}>
+          Psalm 139:13-14 says, "For you created my inmost being; you knit me together in my mother's womb. I praise you because I am fearfully and wonderfully made."
         </div>
         <div style={{fontSize:13,lineHeight:1.9,color:"#4E342E",fontWeight:300}}>
-          Your nervous system is doing exactly what God designed it to do — keeping you at the level it learned was safe. That's your Kingdom Abundance Set Point™. And it formed long before you had a business, long before you had theology to address it, and long before you had any say in the matter.
+          Right now, your nervous system is doing exactly what God engineered it to do: it is keeping you aligned with the exact baseline it early on recorded as safe.
           <br/><br/>
-          Romans 12:2 says be transformed by the renewing of your mind. Actual renewal of the subconscious belief that has been generating these results. Where you become able to receive what God has been trying to give you.
+          That baseline is your Kingdom Abundance Set Point™. It was woven into your biology long before you ever launched a business or understood theology. It isn't a lack of faith; it is simply your body operating its original safety armor.
+          <br/><br/>
+          This is why Romans 12:2 instructs us to "be transformed by the renewing of your mind." True biblical renewal must reach the subconscious foundations where your automatic rules are generated. When that biological space is renewed, your nervous system finally feels safe enough to physically open and receive what God has been trying to give you all along.
         </div>
       </div>
       <div style={{background:"linear-gradient(135deg,#006400 0%,#4E342E 100%)",borderRadius:6,padding:"28px 24px"}}>
         <div style={{fontSize:10,fontWeight:500,letterSpacing:3,textTransform:"uppercase",color:"#E88504",marginBottom:10}}>Your Next Step</div>
-        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:300,color:"white",marginBottom:14,lineHeight:1.4}}>What you just discovered is your Kingdom Abundance Set Point™.</div>
+        <div style={{fontFamily:"'Cormorant Garamond',serif",fontSize:20,fontWeight:300,color:"white",marginBottom:14,lineHeight:1.4}}>Your assessment results just revealed the exact safety blueprint of your Kingdom Abundance Set Point™.</div>
         <div style={{fontSize:13,lineHeight:1.85,color:"rgba(255,255,255,0.85)",fontWeight:300,marginBottom:20}}>
-          Inside <strong style={{color:"white",fontWeight:500}}>Renew & Receive™</strong> we take you all the way to the root memory where it was formed and invite Jesus to heal the memory. That's where Romans 12:2 happens — at the subconscious level, where the belief was formed and where the nervous system learned what was safe to receive.
+          Inside <strong style={{color:"white",fontWeight:500}}>Renew & Receive™</strong>, we don't just manage surface behaviors. We journey directly to the root memories where those protective rules were established, and we invite Jesus to heal them at the root. This is where Romans 12:2 becomes a biological reality — at the nervous system level where your subconscious first learned what was safe to receive.
           <br/><br/>
-          It's 90 days. We do the deep work together. And your nervous system learns it is safe to receive — so the glass ceiling breaks because the root was finally healed by Jesus.
+          Over 90 days, we walk through this deep, beautifully sequenced work together. As those old cycles are updated, your system integrates a profound baseline of safety. The glass ceiling finally dissolves because the root has been healed by Jesus.
         </div>
         <div style={{fontSize:14,fontFamily:"'Cormorant Garamond',serif",fontStyle:"italic",color:"rgba(255,255,255,0.65)",borderTop:"1px solid rgba(255,255,255,0.15)",paddingTop:16,marginBottom:20}}>
-          You just saw your pattern in your own answers. If you feel ready to heal it, apply below.
+          You just saw the architecture of your pattern. If your system feels a quiet resonance and you are ready to heal this at the root, apply below.
         </div>
-        <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:14,fontWeight:300}}>This is an application process — we accept applicants who are ready for deep work.</div>
+        <div style={{fontSize:12,color:"rgba(255,255,255,0.7)",marginBottom:14,fontWeight:300}}>Please Note: This is an intentional application process. We specifically open our doors to leaders who are completely ready to step out of the striving cycle and enter into this deep, restorative work.</div>
         <a href="https://www.kingdomalignment.academy/renew-receive" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#E88504",color:"white",padding:"13px 28px",borderRadius:4,fontFamily:"'Montserrat',sans-serif",fontSize:12,fontWeight:500,letterSpacing:"1.5px",textTransform:"uppercase",textDecoration:"none"}}>Apply for Renew & Receive™</a>
       </div>
       <div style={{textAlign:"center",paddingTop:20}}>
@@ -446,7 +468,7 @@ function App() {
   const [nmIdx, setNmIdx] = useState(0);
   const [incNext, setIncNext] = useState(null);
   const [costItems, setCostItems] = useState([]);
-  const [hbScores, setHbScores] = useState({overworking:0,avoiding_judgment:0,seeking_validation:0,avoiding_responsibility:0});
+  const [hbScores, setHbScores] = useState({seeking_control:0,avoiding_judgment:0,seeking_recognition:0,avoiding_pressure:0});
   const [hbIdx, setHbIdx] = useState(0);
   const [showContact, setShowContact] = useState(false);
   const [showResults, setShowResults] = useState(false);
@@ -462,7 +484,7 @@ function App() {
   useEffect(()=>{
     (async()=>{
       await say("I'm so glad you're here. This is part conversation, part experience. Just answer honestly — first instinct is always the truest data.", 400);
-      await wait(900);
+      await wait(1200);
       await say("Let's start with your name. What should I call you?");
       setPhase("name");
     })();
@@ -472,8 +494,8 @@ function App() {
     if (!nameInput.trim()) return;
     const n = nameInput.trim().split(" ")[0];
     setName(n); userSay(nameInput.trim()); setNameInput(""); setUi(null);
-    await wait(700); await say(`Beautiful. Welcome, ${n}.`);
-    await wait(1000);
+    await wait(1000); await say(`Beautiful. Welcome, ${n}.`);
+    await wait(1200);
     await say("Before we begin, I want to invite God into this conversation — because He is not an add-on to what we're doing here. He is the whole thing.");
     await wait(1000);
     await say("Here's a suggested prayer — feel free to use your own words:");
@@ -486,8 +508,8 @@ function App() {
 
   const handlePrayer = async () => {
     userSay("Continue"); setUi(null);
-    await wait(700); await say("I'm going to read you nine statements. For each one just tell me — consistently true, sometimes true, rarely true, or not at all. First reaction, don't overthink it.");
-    await wait(500);
+    await wait(1100); await say("I'm going to read you nine statements. For each one just tell me — consistently true, sometimes true, rarely true, or not at all. First reaction, don't overthink it.");
+    await wait(800);
     setPhase("abundance"); setAIdx(0);
     setUi({ type:"abundance", idx:0 });
   };
@@ -498,33 +520,38 @@ function App() {
     setTallies(p=>({...p,[level]:p[level]+1}));
     const ni = aIdx+1;
     if (ni < STATEMENTS.length) { setAIdx(ni); setUi({type:"abundance",idx:ni}); }
-    else { await wait(800); await say("Good. Of those nine statements — which single one do you most want to be consistently true?"); setUi({type:"northstar"}); }
+    else { await wait(1100); await say("Good. Of those nine statements — which single one do you most want to be consistently true?"); setUi({type:"northstar"}); }
   };
 
   const handleNorthStar = async opt => {
     setNorthStar(opt); userSay(opt); setUi(null);
-    await wait(700); await say("Hold onto that. That's the real reason you're here.");
-    await wait(900); await say("Now let's get specific about your Set Point. This is your total household income — if you include your spouse or partner's income, factor that in.");
-    setUi({type:"single", opts:INCOME_OPTS, next:"incomeceiling"});
+    await wait(1000); await say("Hold onto that. That's the real reason you're here.");
+    await wait(1200); await say("Now let's get specific about your Set Point. This is your total household income — if you include your spouse or partner's income, factor that in.");
+    setUi({type:"single", opts:INCOME_OPTS, next:"incomebroad"});
   };
 
   const handleSingle = async (opt, next) => {
     userSay(opt); setUi(null);
-    if (next==="incomeceiling") {
+    if (next==="incomebroad") {
+      await wait(1000); await say("Great! Let's get precise. Which bracket fits you best?");
+      setUi({type:"single", opts: INCOME_DRILL[opt] || [], next:"incomeceiling"});
+    } else if (next==="incomeceiling") {
       setIncomeCeil(opt);
-      await wait(700); await say("And when you exceed your Set Point — what happens to pull you back? Select everything that feels familiar.");
+      await wait(1000); await say("And when you exceed your Set Point — what happens to pull you back? Select everything that feels familiar.");
       setUi({type:"multicat"});
     } else if (next==="moneyhand") {
       setMoneyHand(opt);
-      await wait(700); await say("Your abundance set point isn't just about money. Let's look at the full picture.");
-      setNmIdx(0); setUi({type:"nonmoney",idx:0});
-    } else if (next==="incnext") {
-      setIncNext(opt);
-      const cur = INCOME_VAL[incomeCeil]||0, nxt = INCOME_VAL[opt]||0;
-      const ann = Math.max(0,(nxt-cur)*12), dec = ann*10;
-      await wait(800); await say(`That's ${fmt(ann)} every year your current Set Point is costing you. Over a decade — ${fmt(dec)}.`);
-      await wait(900); await say("Beyond money — what is staying here costing you? Select everything that applies.");
-      setUi({type:"costflat"});
+      // Calculate next level and cost
+      const currentNextIdx = INCOME_NEXT_OPTS.indexOf(incomeCeil);
+      const autoNext = currentNextIdx >= 0 && currentNextIdx < INCOME_NEXT_OPTS.length - 1
+        ? INCOME_NEXT_OPTS[currentNextIdx + 1]
+        : INCOME_NEXT_OPTS[INCOME_NEXT_OPTS.length - 1];
+      setIncNext(autoNext);
+      const cur2 = INCOME_VAL[incomeCeil]||0, nxt2 = INCOME_VAL[autoNext]||0;
+      const ann2 = Math.max(0,(nxt2-cur2)*12), dec2 = ann2*10;
+      await wait(800); await say("Based on your current income, your natural next level is " + autoNext + ". That gap is costing you " + fmt(ann2) + " every year — and " + fmt(dec2) + " over a decade.");
+      await wait(1200); await say("🌬️ A Quick Shift\n\nTake a brief pause right here. Looking at those numbers can cause your body to automatically contract or hold its breath. That is just your protective cycle trying to shield you from pressure.\n\nRight now, simply lift the corners of your mouth into a gentle smile and let your shoulders drop.\n\nNobody smiles when a bear is chasing them. By doing that simple physical action, you signal to your brain that the bear is gone. You are completely safe, your stomach is quiet, and you are ready to receive the rest of this truth.");
+      setPhase("quickshift");
     }
   };
 
@@ -532,13 +559,16 @@ function App() {
     const key = NON_MONEY[nmIdx].key;
     setNonMoney(p=>({...p,[key]:opt})); userSay(opt); setUi(null);
     const ni = nmIdx+1;
-    if (ni < NON_MONEY.length) { setNmIdx(ni); await wait(400); setUi({type:"nonmoney",idx:ni}); }
-    else { await wait(800); await say("Let's do some quick math. What's your realistic next income level — not your dream number, your next level."); setUi({type:"single",opts:INCOME_NEXT_OPTS,next:"incnext"}); }
+    if (ni < NON_MONEY.length) { setNmIdx(ni); await wait(700); setUi({type:"nonmoney",idx:ni}); }
+    else {
+      await wait(1200); await say("Beyond money — what is staying here costing you? Select everything that applies.");
+      setUi({type:"costflat"});
+    }
   };
 
   const handlePatterns = async sel => {
     setPatterns(sel); userSay(sel.filter(s=>!s.startsWith("N/A")).length + " patterns selected"); setUi(null);
-    await wait(700); await say("And how much extra money do you consistently have on hand? Not last month — the consistent number.");
+    await wait(1000); await say("And how much extra money do you consistently have on hand? Not last month — the consistent number.");
     setUi({type:"single",opts:MONEY_OPTS,next:"moneyhand"});
   };
 
@@ -554,8 +584,8 @@ function App() {
 
   const handleCostItems = async sel => {
     setCostItems(sel); userSay(sel.length>0?`${sel.length} item${sel.length!==1?"s":""} selected`:"None selected"); setUi(null);
-    await wait(900); await say("Last set of questions — and these are different. Read each statement and just ask yourself if it feels familiar in the last year. If it takes more than three seconds, that's a yes.");
-    await wait(700); await say("Group 1 of 4.");
+    await wait(1200); await say("Last set of questions — and these are different. Read each statement and just ask yourself if it feels familiar in the last year. If it takes more than three seconds, that's a yes.");
+    await wait(1000); await say("Group 1 of 4.");
     setHbIdx(0); setUi({type:"hb",idx:0});
   };
 
@@ -564,10 +594,10 @@ function App() {
     setHbScores(p=>({...p,[cat.key]:score}));
     userSay(`${score} of 15 felt familiar`); setUi(null);
     const ni = hbIdx+1;
-    if (ni < HB_CATS.length) { setHbIdx(ni); await wait(500); await say(`Group ${ni+1} of 4.`); setUi({type:"hb",idx:ni}); }
+    if (ni < HB_CATS.length) { setHbIdx(ni); await wait(1000); await say(`Group ${ni+1} of 4.`); setUi({type:"hb",idx:ni}); }
     else {
-      await wait(1100); await say("I've been taking notes this whole time. Before I show you your results, I'd love to be able to follow up with you personally.");
-      await wait(800); setShowContact(true); setPhase("contact");
+      await wait(1400); await say("I've been taking notes this whole time. Before I show you your results, I'd love to be able to follow up with you personally.");
+      await wait(1100); setShowContact(true); setPhase("contact");
     }
   };
 
@@ -577,10 +607,10 @@ function App() {
     setShowContact(false);
     const sp = getSP(tallies), hb = getHB(hbScores), shb = getSecondaryHB(hbScores, hb);
     const descMap = {
-      overworking: "Your nervous system responds to the belief that staying busy keeps you safe. If you were always working, you were always worthy. What becomes possible when that belief is renewed is a business that produces from rest — where your value is established in Christ, not earned by your output. Ephesians 2:10 — We are God's handiwork, created in Christ Jesus to do good works, which God prepared in advance for us to do.",
-      avoiding_judgment: "Your nervous system responds to the belief that staying small keeps you safe from scrutiny. What becomes possible when that belief is renewed is the freedom to be fully seen — to receive more money, more visibility, more success — and trust that God's opinion of you is the only one your nervous system needs to protect. Psalm 139:14 — I praise you because I am fearfully and wonderfully made.",
-      seeking_validation: "Your nervous system responds to the belief that you need permission before receiving. What becomes possible when that belief is renewed is the ability to trust your own discernment — to move when God opens a door without needing someone else to confirm it's safe to walk through. Philippians 4:13 — I can do all things through Christ who strengthens me.",
-      avoiding_responsibility: "Your nervous system responds to the belief that having more means carrying more — and somewhere deep down that feels like too much. What becomes possible when that belief is renewed is the discovery that God never intended you to carry it alone. The weight of more was always meant to be shared with Him. Matthew 11:30 — For my yoke is easy and my burden is light."
+      seeking_control: "Your nervous system operates a protective cycle based on the automatic rule that you are only safe when you are carrying every variable yourself. Delegation feels like exposure. Letting go feels like danger. What becomes possible when that rule is renewed is a business that scales beyond what one person can hold — where trusting others is not a risk, but a beautiful sign that your nervous system has finally learned it is safe to receive support. Romans 8:28 — And we know that in all things God works for the good of those who love him, who have been called according to his purpose.",
+      avoiding_judgment: "Your nervous system operates a protective cycle that associates being fully seen with being targeted, so it keeps you insulated behind endless preparation, polished offers, and flawless execution. What becomes possible when that cycle is renewed is the absolute freedom to be visible and launch before you're perfect — and to trust that God's love is the only baseline that was ever keeping score. Romans 8:1 — There is now no condemnation for those who are in Christ Jesus.",
+      seeking_recognition: "Your nervous system operates a protective cycle based on the subconscious belief that your safety and worth must be actively proven through output. Rest feels unsafe. Receiving feels unearned. What becomes possible when that cycle is renewed is the ability to finally slow down and receive what you've already built — where your value is established securely in Christ, not verified by your next achievement. Romans 8:17 — Now if we are children, then we are heirs — heirs of God and co-heirs with Christ, if indeed we share in his sufferings in order that we may also share in his glory.",
+      avoiding_pressure: "Your nervous system operates a protective cycle based on the rule that the next level will automatically cost you everything — your freedom, your family, your peace. So the moment a major breakthrough appears, your body hits the brakes. What becomes possible when that architecture is renewed is the discovery that God never designed the next level to crush you. The weight of more was always meant to be carried in rest with Him. Matthew 11:30 — For my yoke is easy and my burden is light."
     };
     const hbDesc = descMap[hb] || "";
     const cur = INCOME_VAL[incomeCeil]||0, nxt = INCOME_VAL[incNext]||0;
@@ -593,8 +623,8 @@ function App() {
       patternsByCategory: getPatternsByCategory(patterns),
       northStar,
     });
-    await wait(800); await say("Thank you. Let me show you what I see.");
-    await wait(1200); setShowResults(true); setPhase("done");
+    await wait(1000); await say("Thank you. Let me show you what I see.");
+    await wait(1600); setShowResults(true); setPhase("done");
   };
 
   const prog = () => {
@@ -602,11 +632,12 @@ function App() {
     if (phase==="prayer") return 8;
     if (phase==="abundance") return 10 + (aIdx/9)*20;
     if (ui?.type==="northstar") return 32;
+    if (ui?.next==="incomebroad") return 34;
     if (ui?.next==="incomeceiling") return 36;
     if (ui?.type==="multicat") return 44;
     if (ui?.next==="moneyhand") return 50;
     if (ui?.type==="nonmoney") return 54+(nmIdx/4)*10;
-    if (ui?.next==="incnext") return 66;
+    
     if (ui?.type==="costflat") return 72;
     if (ui?.type==="hb") return 76+(hbIdx/4)*20;
     if (phase==="contact") return 96;
@@ -617,9 +648,9 @@ function App() {
   const progLabel = () => {
     if (phase==="name"||phase==="prayer") return "Getting started";
     if (phase==="abundance"||ui?.type==="northstar") return "Abundance Inventory";
-    if (ui?.next==="incomeceiling"||ui?.type==="multicat"||ui?.next==="moneyhand") return "Financial Set Point";
+    if (ui?.next==="incomebroad"||ui?.next==="incomeceiling"||ui?.type==="multicat"||ui?.next==="moneyhand") return "Financial Set Point";
     if (ui?.type==="nonmoney") return "Non-Money Set Points";
-    if (ui?.next==="incnext"||ui?.type==="costflat") return "The Real Cost";
+    if (ui?.type==="costflat") return "The Real Cost";
     if (ui?.type==="hb") return `Hidden Benefit Assessment — Group ${hbIdx+1} of 4`;
     if (phase==="contact") return "Almost there";
     if (phase==="done") return "Complete";
@@ -673,7 +704,7 @@ function App() {
         {msgs.map(m=>(
           <div key={m.id} className={`msg ${m.from==="u"?"user":""}`}>
             <div className={`av ${m.from==="s"?"s":"u"}`}>{m.from==="s"?"S":name?name[0].toUpperCase():"Y"}</div>
-            <div className={`bub ${m.from==="s"?"s":"u"}`}>{m.text}</div>
+            <div className={`bub ${m.from==="s"?"s":"u"}`} style={{whiteSpace:"pre-line"}}>{m.text}</div>
           </div>
         ))}
         {typing && <div className="msg"><div className="av s">S</div><div className="typing"><span/><span/><span/></div></div>}
@@ -682,6 +713,11 @@ function App() {
         <div className="inrow">
           <input className="txtin" placeholder="Your name..." value={nameInput} onChange={e=>setNameInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&handleName()} autoFocus />
           <button className="sndbtn" onClick={handleName}>→</button>
+        </div>
+      )}
+      {phase==="quickshift" && (
+        <div className="prayer-btn">
+          <button className="cont" style={{width:"100%",padding:"14px"}} onClick={async()=>{userSay("Continue");setPhase("abundance");await new Promise(res=>setTimeout(res,300));setMsgs(p=>[...p,{text:"Your abundance set point isn't just about money. Let's look at the full picture.",from:"s",id:Date.now()+Math.random()}]);await new Promise(res=>setTimeout(res,1000));setNmIdx(0);setUi({type:"nonmoney",idx:0});}}>I'm ready — Continue →</button>
         </div>
       )}
       {phase==="prayer" && (
